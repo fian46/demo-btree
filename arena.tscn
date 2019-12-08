@@ -1,0 +1,185 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://new_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://hide.tscn" type="PackedScene" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Navigation2D.gd" type="Script" id=5]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -320, -128, 0, 0, 0, 0, 288, -128, 0, 0, 0, 0, 288, 96, 0, 0, 0, 0, 64, 96, 0, 0, 0, 0, 64, 224, 0, 0, 0, 0, -128, 224, 0, 0, 0, 0, -128, 96, 0, 0, 0, 0, -320, 96, 0, 0, 0, 0, -320, -128 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -352, 416, 0, 0, 0, 0, -96, 416, 0, 0, 0, 0, -96, 512, 0, 0, 0, 0, 160, 512, 0, 0, 0, 0, 160, 608, 0, 0, 0, 0, 160, 736, 0, 0, 0, 0, 160, 800, 0, 0, 0, 0, -32, 800, 0, 0, 0, 0, -96, 800, 0, 0, 0, 0, -96, 608, 0, 0, 0, 0, -320, 608, 0, 0, 0, 0, -352, 608, 0, 0, 0, 0, -352, 416 )
+}
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( 320, -288, 320, -384, 352, -480, 352, -64, 128, 416, 352, 480, -416, 480, -32, 416, 768, -928, 768, 1248, 448, 576, 448, -576, 192, 960, -1056, 1248, -864, 960, -864, -64, -1056, -928, -992, -928, 192, 640, -416, 576, 96, 640, 64, -576, 64, -480, -256, -384, 352, 32, 128, 224, 192, 32, 192, -64, -256, -288, 96, 864, -768, 864, -768, 32, -608, 256, -544, 32, -544, 128, -608, 160, -448, 128, -448, 0, -416, 0, -416, 160, -416, 256, -416, 416, -320, 416, -320, 96, -96, 96, -32, 160, -32, 224, -96, 32, -32, 32, -416, -576, -416, -64, 128, 160, 128, -64, -320, -64, -320, -480, 0, -480, 0, -576 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 12, 9, 13, 14 ), PoolIntArray( 15, 14, 13, 16, 17 ), PoolIntArray( 10, 9, 12, 18 ), PoolIntArray( 19, 10, 18, 20 ), PoolIntArray( 17, 8, 11, 21 ), PoolIntArray( 22, 2, 1, 23 ), PoolIntArray( 24, 5, 4, 25, 26 ), PoolIntArray( 0, 3, 27, 28 ), PoolIntArray( 20, 29, 30, 19 ), PoolIntArray( 19, 30, 31, 32 ), PoolIntArray( 31, 33, 34, 35 ), PoolIntArray( 36, 37, 38, 39 ), PoolIntArray( 36, 39, 35, 34 ), PoolIntArray( 32, 40, 41 ), PoolIntArray( 42, 43, 44, 45, 46 ), PoolIntArray( 44, 47, 48, 45 ), PoolIntArray( 49, 50, 15, 17 ), PoolIntArray( 31, 35, 32 ), PoolIntArray( 6, 19, 32 ), PoolIntArray( 6, 32, 41 ), PoolIntArray( 6, 41, 42 ), PoolIntArray( 7, 6, 42 ), PoolIntArray( 46, 7, 42 ), PoolIntArray( 25, 46, 45, 51 ), PoolIntArray( 26, 25, 51 ), PoolIntArray( 26, 51, 52, 27 ), PoolIntArray( 28, 27, 52 ), PoolIntArray( 28, 52, 53 ), PoolIntArray( 28, 53, 54, 23 ), PoolIntArray( 23, 54, 55 ), PoolIntArray( 22, 23, 55 ), PoolIntArray( 21, 22, 55, 56 ), PoolIntArray( 17, 21, 56 ), PoolIntArray( 49, 17, 56 ) ]
+outlines = [ PoolVector2Array( -992, -928, 768, -928, 768, 1248, -1056, 1248, -1056, -928 ), PoolVector2Array( -864, -64, -864, 960, 192, 960, 192, 640, 96, 640, 96, 864, -768, 864, -768, 32, -544, 32, -544, 128, -448, 128, -448, 0, -416, 0, -416, 160, -608, 160, -608, 256, -416, 256, -416, 416, -320, 416, -320, 96, -96, 96, -96, 32, -32, 32, -32, 160, 128, 160, 128, -64, -320, -64, -320, -480, 0, -480, 0, -576, -416, -576, -416, -64 ), PoolVector2Array( -416, 480, 352, 480, 352, 32, 192, 32, 192, -64, 352, -64, 352, -480, 64, -480, 64, -576, 448, -576, 448, 576, -416, 576 ), PoolVector2Array( -256, -384, 320, -384, 320, -288, -256, -288 ), PoolVector2Array( -32, 224, -32, 416, 128, 416, 128, 224 ) ]
+
+[node name="arena" type="Node2D"]
+
+[node name="character" parent="." instance=ExtResource( 1 )]
+position = Vector2( 416, 704 )
+
+[node name="TileMap" type="TileMap" parent="."]
+editor/display_folded = true
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -1048588, 3, 0, -1048587, 3, 0, -1048586, 3, 0, -1048585, 3, 0, -1048584, 3, 0, -1048583, 3, 0, -1048582, 3, 0, -1048581, 3, 0, -1048580, 3, 0, -1048579, 3, 0, -1048578, 3, 0, -1114109, 3, 0, -1114108, 3, 0, -1114107, 3, 0, -1114106, 3, 0, -1114105, 3, 0, -1114104, 3, 0, -1114103, 3, 0, -1114102, 3, 0, -1114101, 3, 0, -1114100, 3, 0, -983052, 3, 0, -1048564, 3, 0, -917516, 3, 0, -983028, 3, 0, -851980, 3, 0, -917492, 3, 0, -786444, 3, 0, -851956, 3, 0, -720908, 3, 0, -786420, 3, 0, -655372, 3, 0, -655367, 3, 0, -655366, 3, 0, -655365, 3, 0, -655364, 3, 0, -655363, 3, 0, -655362, 3, 0, -655361, 3, 0, -720896, 3, 0, -720895, 3, 0, -720894, 3, 0, -720893, 3, 0, -720892, 3, 0, -720891, 3, 0, -720890, 3, 0, -720889, 3, 0, -720888, 3, 0, -720884, 3, 0, -589836, 3, 0, -655348, 3, 0, -524300, 3, 0, -589812, 3, 0, -458764, 3, 0, -524276, 3, 0, -393228, 3, 0, -458740, 3, 0, -327692, 3, 0, -393204, 3, 0, -262156, 3, 0, -327668, 3, 0, -196620, 3, 0, -262132, 3, 0, -131084, 3, 0, -196596, 3, 0, -65548, 3, 0, -131060, 3, 0, -26, 3, 0, -25, 3, 0, -24, 3, 0, -23, 3, 0, -22, 3, 0, -21, 3, 0, -20, 3, 0, -19, 3, 0, -18, 3, 0, -17, 3, 0, -16, 3, 0, -15, 3, 0, -14, 3, 0, -13, 3, 0, -12, 3, 0, -11, 3, 0, -10, 3, 0, -9, 3, 0, -8, 3, 0, -7, 3, 0, -6, 3, 0, -5, 3, 0, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 3, 0, -65524, 3, 0, 65510, 3, 0, 65520, 3, 0, 65524, 3, 0, 65527, 3, 0, 65528, 3, 0, 65529, 3, 0, 65530, 3, 0, 65531, 3, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 12, 3, 0, 131046, 3, 0, 131056, 3, 0, 131060, 3, 0, 131063, 3, 0, 131064, 3, 0, 131065, 3, 0, 131066, 3, 0, 131067, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65548, 3, 0, 196582, 3, 0, 196592, 3, 0, 196596, 3, 0, 131072, 3, 0, 131073, 3, 0, 131074, 3, 0, 131084, 3, 0, 262118, 3, 0, 262132, 3, 0, 196608, 3, 0, 196609, 3, 0, 196610, 3, 0, 196620, 3, 0, 327654, 3, 0, 327668, 3, 0, 262156, 3, 0, 393190, 3, 0, 393204, 3, 0, 327692, 3, 0, 458726, 3, 0, 458734, 3, 0, 458735, 3, 0, 458736, 3, 0, 458737, 3, 0, 458738, 3, 0, 458739, 3, 0, 458740, 3, 0, 393228, 3, 0, 524262, 3, 0, 524276, 3, 0, 458764, 3, 0, 589798, 3, 0, 589812, 3, 0, 524288, 3, 0, 524289, 3, 0, 524290, 3, 0, 524300, 3, 0, 655334, 3, 0, 655348, 3, 0, 589824, 3, 0, 589825, 3, 0, 589826, 3, 0, 589836, 3, 0, 720870, 3, 0, 720884, 3, 0, 655360, 3, 0, 655361, 3, 0, 655362, 3, 0, 655372, 3, 0, 786406, 3, 0, 786420, 3, 0, 720896, 3, 0, 720897, 3, 0, 720898, 3, 0, 720908, 3, 0, 851942, 3, 0, 786444, 3, 0, 917478, 3, 0, 851980, 3, 0, 983014, 3, 0, 917516, 3, 0, 1048550, 3, 0, 983052, 3, 0, 1114086, 3, 0, 1114100, 3, 0, 1114101, 3, 0, 1114102, 3, 0, 1114103, 3, 0, 1114104, 3, 0, 1114105, 3, 0, 1114106, 3, 0, 1114107, 3, 0, 1114108, 3, 0, 1114109, 3, 0, 1114110, 3, 0, 1114111, 3, 0, 1048576, 3, 0, 1048577, 3, 0, 1048578, 3, 0, 1048579, 3, 0, 1048580, 3, 0, 1048581, 3, 0, 1048582, 3, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 3, 0, 1048586, 3, 0, 1048587, 3, 0, 1048588, 3, 0, 1179622, 3, 0, 1245158, 3, 0, 1310694, 3, 0, 1376230, 3, 0, 1441766, 3, 0, 1376260, 3, 0, 1507302, 3, 0, 1441796, 3, 0, 1572838, 3, 0, 1507332, 3, 0, 1638374, 3, 0, 1572868, 3, 0, 1703910, 3, 0, 1638404, 3, 0, 1769446, 3, 0, 1703940, 3, 0, 1834982, 3, 0, 1769476, 3, 0, 1900518, 3, 0, 1900519, 3, 0, 1900520, 3, 0, 1900521, 3, 0, 1900522, 3, 0, 1900523, 3, 0, 1900524, 3, 0, 1900525, 3, 0, 1900526, 3, 0, 1900527, 3, 0, 1900528, 3, 0, 1900529, 3, 0, 1900530, 3, 0, 1900531, 3, 0, 1900532, 3, 0, 1900533, 3, 0, 1900534, 3, 0, 1900535, 3, 0, 1900536, 3, 0, 1900537, 3, 0, 1900538, 3, 0, 1900539, 3, 0, 1900540, 3, 0, 1900541, 3, 0, 1900542, 3, 0, 1900543, 3, 0, 1835008, 3, 0, 1835009, 3, 0, 1835010, 3, 0, 1835011, 3, 0, 1835012, 3, 0 )
+
+[node name="hide" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -448, 64 )
+
+[node name="hide2" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -544, 160 )
+
+[node name="hide3" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -288, 352 )
+
+[node name="hide20" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -64, 320 )
+
+[node name="hide21" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 160, 320 )
+
+[node name="hide22" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 52, 224 )
+
+[node name="hide23" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 52, 448 )
+
+[node name="hide24" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -512, 288 )
+
+[node name="hide25" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -608, 224 )
+
+[node name="hide26" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -308, -96 )
+
+[node name="hide27" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -308, -448 )
+
+[node name="hide28" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -448, -576 )
+
+[node name="hide29" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 471.163, -576 )
+
+[node name="hide30" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 471.163, -32 )
+
+[node name="hide31" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -448, -96 )
+
+[node name="hide4" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -448, 352 )
+
+[node name="hide5" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 160, 256 )
+
+[node name="hide6" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 160, 384 )
+
+[node name="hide7" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -64, 384 )
+
+[node name="hide17" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -352, 469.5 )
+
+[node name="hide32" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -224, 469.5 )
+
+[node name="hide33" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -160, 352 )
+
+[node name="hide34" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -128, 469.5 )
+
+[node name="hide18" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -352, 576 )
+
+[node name="hide8" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -64, 256 )
+
+[node name="hide9" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 134, 128 )
+
+[node name="hide19" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 160, 0 )
+
+[node name="hide10" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 256, -96 )
+
+[node name="hide11" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 256, -416 )
+
+[node name="hide12" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 256, -256 )
+
+[node name="hide13" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -198, -256 )
+
+[node name="hide14" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -192, -416 )
+
+[node name="hide15" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 32, -416 )
+
+[node name="hide16" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 32, -256 )
+
+[node name="Path2D" type="Path2D" parent="TileMap"]
+position = Vector2( 32, -320 )
+curve = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="TileMap/Path2D"]
+texture = ExtResource( 4 )
+
+[node name="Path2D2" type="Path2D" parent="TileMap"]
+position = Vector2( 32, -320 )
+curve = SubResource( 2 )
+
+[node name="icon" type="Sprite" parent="TileMap/Path2D2"]
+texture = ExtResource( 4 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 5 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+visible = false
+navpoly = SubResource( 3 )
+
+[node name="enemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( -128, -224 )
+
+[node name="enemy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, -448 )
+
+[node name="enemy3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 192, -224 )
+
+[node name="enemy4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -192, -448 )
+
+[node name="enemy5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 288, 288 )
+
+[node name="enemy6" parent="." instance=ExtResource( 6 )]
+position = Vector2( -288, 309.5 )
+
+[node name="enemy7" parent="." instance=ExtResource( 6 )]
+position = Vector2( -224, 128 )
+
+[node name="enemy8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 32, 448 )
+
+[node name="Camera2D" type="Camera2D" parent="."]

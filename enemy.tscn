@@ -1,0 +1,5569 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://enemy.gd" type="Script" id=1]
+[ext_resource path="res://addons/btree/script/btree.gd" type="Script" id=2]
+[ext_resource path="res://addons/btree/icons/icon_tree.svg" type="Texture" id=3]
+[ext_resource path="res://soldier/soldier1_reload.png" type="Texture" id=4]
+[ext_resource path="res://soldier/soldier1_gun.png" type="Texture" id=5]
+[ext_resource path="res://soldier/soldier1_stand.png" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "reload",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 1000.0
+
+[node name="enemy" type="RigidBody2D"]
+collision_layer = 0
+mode = 2
+script = ExtResource( 1 )
+
+[node name="BTREE" type="Node" parent="."]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 3 )
+}
+tree = {
+"connection": [ {
+"from": "sequence",
+"from_port": 0,
+"to": "task2",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 1,
+"to": "task",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 2,
+"to": "task3",
+"to_port": 0
+}, {
+"from": "repeat",
+"from_port": 0,
+"to": "mute",
+"to_port": 0
+}, {
+"from": "root",
+"from_port": 0,
+"to": "parallel",
+"to_port": 0
+}, {
+"from": "parallel",
+"from_port": 1,
+"to": "repeat",
+"to_port": 0
+}, {
+"from": "repeat2",
+"from_port": 0,
+"to": "mute2",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 0,
+"to": "task4",
+"to_port": 0
+}, {
+"from": "parallel",
+"from_port": 0,
+"to": "repeat2",
+"to_port": 0
+}, {
+"from": "mute",
+"from_port": 0,
+"to": "priority_selector",
+"to_port": 0
+}, {
+"from": "priority_selector",
+"from_port": 0,
+"to": "priority_condition",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 0,
+"to": "task5",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 1,
+"to": "task6",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 2,
+"to": "task7",
+"to_port": 0
+}, {
+"from": "priority_condition2",
+"from_port": 0,
+"to": "sequence3",
+"to_port": 0
+}, {
+"from": "while_node",
+"from_port": 0,
+"to": "task8",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 1,
+"to": "while_node",
+"to_port": 0
+}, {
+"from": "priority_selector",
+"from_port": 1,
+"to": "priority_condition2",
+"to_port": 0
+}, {
+"from": "mute2",
+"from_port": 0,
+"to": "sequence2",
+"to_port": 0
+}, {
+"from": "priority_condition",
+"from_port": 0,
+"to": "priority_selector2",
+"to_port": 0
+}, {
+"from": "priority_selector2",
+"from_port": 0,
+"to": "priority_condition3",
+"to_port": 0
+}, {
+"from": "priority_selector2",
+"from_port": 1,
+"to": "priority_condition4",
+"to_port": 0
+}, {
+"from": "priority_condition4",
+"from_port": 0,
+"to": "sequence",
+"to_port": 0
+}, {
+"from": "priority_condition3",
+"from_port": 0,
+"to": "sequence4",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 0,
+"to": "task9",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 1,
+"to": "wait_node2",
+"to_port": 0
+}, {
+"from": "repeat3",
+"from_port": 0,
+"to": "task12",
+"to_port": 0
+}, {
+"from": "race",
+"from_port": 0,
+"to": "repeat3",
+"to_port": 0
+}, {
+"from": "sequence4",
+"from_port": 0,
+"to": "race",
+"to_port": 0
+}, {
+"from": "race",
+"from_port": 1,
+"to": "repeat4",
+"to_port": 0
+}, {
+"from": "repeat4",
+"from_port": 0,
+"to": "sequence5",
+"to_port": 0
+}, {
+"from": "sequence4",
+"from_port": 1,
+"to": "race2",
+"to_port": 0
+}, {
+"from": "race2",
+"from_port": 0,
+"to": "wait_node",
+"to_port": 0
+}, {
+"from": "priority_selector3",
+"from_port": 0,
+"to": "priority_condition5",
+"to_port": 0
+}, {
+"from": "priority_selector3",
+"from_port": 1,
+"to": "priority_condition6",
+"to_port": 0
+}, {
+"from": "priority_condition5",
+"from_port": 0,
+"to": "sequence6",
+"to_port": 0
+}, {
+"from": "sequence6",
+"from_port": 0,
+"to": "task10",
+"to_port": 0
+}, {
+"from": "sequence6",
+"from_port": 1,
+"to": "task13",
+"to_port": 0
+}, {
+"from": "sequence6",
+"from_port": 2,
+"to": "task14",
+"to_port": 0
+}, {
+"from": "sequence7",
+"from_port": 0,
+"to": "task11",
+"to_port": 0
+}, {
+"from": "sequence7",
+"from_port": 1,
+"to": "task15",
+"to_port": 0
+}, {
+"from": "sequence7",
+"from_port": 2,
+"to": "task16",
+"to_port": 0
+}, {
+"from": "priority_condition6",
+"from_port": 0,
+"to": "sequence7",
+"to_port": 0
+}, {
+"from": "repeat5",
+"from_port": 0,
+"to": "mute3",
+"to_port": 0
+}, {
+"from": "mute3",
+"from_port": 0,
+"to": "priority_selector3",
+"to_port": 0
+}, {
+"from": "race2",
+"from_port": 2,
+"to": "repeat5",
+"to_port": 0
+}, {
+"from": "race2",
+"from_port": 1,
+"to": "repeat6",
+"to_port": 0
+}, {
+"from": "repeat6",
+"from_port": 0,
+"to": "mute4",
+"to_port": 0
+}, {
+"from": "mute4",
+"from_port": 0,
+"to": "task17",
+"to_port": 0
+} ],
+"nodes": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1282.18, -626.283 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1289.38, -283.057 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1022.18, -466.283 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 786.773, -344.43 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 500, -310 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1270, 370 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1266.23, 581.688 ),
+"size": Vector2( 329, 55.0001 )
+},
+"name": "priority_condition2",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 980, 390 ),
+"size": Vector2( 179.414, 109 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 750, 360 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 475.818, 287.338 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 280, 20 ),
+"size": Vector2( 119, 109 )
+},
+"name": "parallel",
+"type": 6
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 96, 82 )
+},
+"name": "root",
+"type": 0
+}, {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1282.18, -626.283 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1289.38, -283.057 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1022.18, -466.283 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 786.773, -344.43 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 500, -310 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1270, 370 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1266.23, 581.688 ),
+"size": Vector2( 329, 55.0001 )
+},
+"name": "priority_condition2",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 980, 390 ),
+"size": Vector2( 179.414, 109 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 750, 360 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 475.818, 287.338 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 280, 20 ),
+"size": Vector2( 119, 109 )
+},
+"name": "parallel",
+"type": 6
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1270, 370 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1266.23, 581.688 ),
+"size": Vector2( 329, 55.0001 )
+},
+"name": "priority_condition2",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 980, 390 ),
+"size": Vector2( 179.414, 109 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 750, 360 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1270, 370 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1266.23, 581.688 ),
+"size": Vector2( 329, 55.0001 )
+},
+"name": "priority_condition2",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 980, 390 ),
+"size": Vector2( 179.414, 109 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 750, 360 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 475.818, 287.338 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1282.18, -626.283 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1289.38, -283.057 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1022.18, -466.283 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 786.773, -344.43 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 500, -310 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1270, 370 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1266.23, 581.688 ),
+"size": Vector2( 329, 55.0001 )
+},
+"name": "priority_condition2",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 980, 390 ),
+"size": Vector2( 179.414, 109 )
+},
+"name": "priority_selector",
+"type": 4
+}, {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1282.18, -626.283 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1282.18, -626.283 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1289.38, -283.057 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1022.18, -466.283 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1282.18, -626.283 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1289.38, -283.057 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1022.18, -466.283 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 786.773, -344.43 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1266.23, 581.688 ),
+"size": Vector2( 329, 55.0001 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1270, 370 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1289.38, -283.057 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+}, {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+}, {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"root": {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1282.18, -626.283 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1617.75, -227.834 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1289.38, -283.057 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1022.18, -466.283 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 786.773, -344.43 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 500, -310 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3069.5, -594.096 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2823.61, -588.274 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3325.84, -322.892 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3325.84, -192.892 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3086.2, -295.116 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2823.61, -335.986 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2674.11, -484.179 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2930, -70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3380, 40 ),
+"params": [  ],
+"size": Vector2( 332, 84.9999 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3180, 80 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2930, 70 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4090, -70 ),
+"params": [  ],
+"size": Vector2( 313, 84.9998 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4090, 100 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4085.44, 252.124 ),
+"params": [  ],
+"size": Vector2( 305.001, 85 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3865.44, 92.1241 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3495.44, 182.124 ),
+"size": Vector2( 266, 55.0001 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4123.95, 406.56 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4123.95, 526.56 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4123.95, 626.56 ),
+"params": [  ],
+"size": Vector2( 305, 84.9998 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3909.93, 470.069 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3505.44, 372.124 ),
+"size": Vector2( 300.927, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3285.44, 222.124 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3140, 220 ),
+"size": Vector2( 115, 55.0002 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2920, 170 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2730, 80 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2390, 0 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1900, 60 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2590, 340 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2590, 480 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2600, 620 ),
+"params": [  ],
+"size": Vector2( 333, 84.9996 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2310, 430 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1903.85, 296.253 ),
+"size": Vector2( 289, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1660, 170 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1270, 370 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 1991.75, 639.836 ),
+"params": [  ],
+"size": Vector2( 391, 84.9998 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 1991.75, 779.836 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 1991.75, 909.836 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1721.75, 709.836 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1266.23, 581.688 ),
+"size": Vector2( 329, 55.0001 )
+},
+"name": "priority_condition2",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 980, 390 ),
+"size": Vector2( 179.414, 109 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 750, 360 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 475.818, 287.338 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 280, 20 ),
+"size": Vector2( 119, 109 )
+},
+"name": "parallel",
+"type": 6
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 96, 82 )
+},
+"name": "root",
+"type": 0
+}
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "gun"
+
+[node name="shoot" type="Node2D" parent="AnimatedSprite"]
+position = Vector2( 30, 10 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -20.0
+margin_top = -50.0
+margin_right = 20.0
+margin_bottom = -36.0
+align = 1
+valign = 1
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

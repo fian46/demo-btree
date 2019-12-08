@@ -1,0 +1,7603 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://character.gd" type="Script" id=1]
+[ext_resource path="res://addons/btree/script/btree.gd" type="Script" id=2]
+[ext_resource path="res://addons/btree/icons/icon_tree.svg" type="Texture" id=3]
+[ext_resource path="res://hitman/hitman1_reload.png" type="Texture" id=4]
+[ext_resource path="res://hitman/hitman1_gun.png" type="Texture" id=5]
+[ext_resource path="res://hitman/hitman1_hold.png" type="Texture" id=6]
+[ext_resource path="res://hitman/hitman1_silencer.png" type="Texture" id=7]
+[ext_resource path="res://hitman/hitman1_stand.png" type="Texture" id=8]
+[ext_resource path="res://hitman/hitman1_machine.png" type="Texture" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 27.5326
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "reload",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "hold",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "silencer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "machine",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "died",
+"speed": 5.0
+} ]
+
+[node name="character" type="KinematicBody2D"]
+z_index = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="BTREE" type="Node" parent="."]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 3 )
+}
+tree = {
+"connection": [ {
+"from": "repeat",
+"from_port": 0,
+"to": "mute",
+"to_port": 0
+}, {
+"from": "repeat2",
+"from_port": 0,
+"to": "mute2",
+"to_port": 0
+}, {
+"from": "mute2",
+"from_port": 0,
+"to": "sequence2",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 0,
+"to": "task2",
+"to_port": 0
+}, {
+"from": "priority_condition",
+"from_port": 0,
+"to": "priority_selector2",
+"to_port": 0
+}, {
+"from": "priority_selector2",
+"from_port": 0,
+"to": "priority_condition2",
+"to_port": 0
+}, {
+"from": "priority_selector2",
+"from_port": 1,
+"to": "priority_condition3",
+"to_port": 0
+}, {
+"from": "priority_condition2",
+"from_port": 0,
+"to": "sequence3",
+"to_port": 0
+}, {
+"from": "parallel",
+"from_port": 0,
+"to": "repeat2",
+"to_port": 0
+}, {
+"from": "priority_selector",
+"from_port": 0,
+"to": "priority_condition",
+"to_port": 0
+}, {
+"from": "mute",
+"from_port": 0,
+"to": "priority_selector",
+"to_port": 0
+}, {
+"from": "repeat3",
+"from_port": 0,
+"to": "mute3",
+"to_port": 0
+}, {
+"from": "mute3",
+"from_port": 0,
+"to": "priority_selector3",
+"to_port": 0
+}, {
+"from": "priority_condition4",
+"from_port": 0,
+"to": "sequence4",
+"to_port": 0
+}, {
+"from": "priority_selector3",
+"from_port": 1,
+"to": "priority_condition5",
+"to_port": 0
+}, {
+"from": "priority_selector3",
+"from_port": 0,
+"to": "priority_condition6",
+"to_port": 0
+}, {
+"from": "priority_condition6",
+"from_port": 0,
+"to": "sequence5",
+"to_port": 0
+}, {
+"from": "priority_condition5",
+"from_port": 0,
+"to": "task9",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 2,
+"to": "task4",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 3,
+"to": "task5",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 1,
+"to": "mute4",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 0,
+"to": "task3",
+"to_port": 0
+}, {
+"from": "sequence6",
+"from_port": 2,
+"to": "task12",
+"to_port": 0
+}, {
+"from": "sequence6",
+"from_port": 3,
+"to": "task13",
+"to_port": 0
+}, {
+"from": "sequence6",
+"from_port": 0,
+"to": "task10",
+"to_port": 0
+}, {
+"from": "priority_condition3",
+"from_port": 0,
+"to": "sequence6",
+"to_port": 0
+}, {
+"from": "mute4",
+"from_port": 0,
+"to": "while_node",
+"to_port": 0
+}, {
+"from": "while_node",
+"from_port": 0,
+"to": "sequence",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 0,
+"to": "task",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 1,
+"to": "task11",
+"to_port": 0
+}, {
+"from": "mute5",
+"from_port": 0,
+"to": "while_node2",
+"to_port": 0
+}, {
+"from": "while_node2",
+"from_port": 0,
+"to": "sequence7",
+"to_port": 0
+}, {
+"from": "sequence7",
+"from_port": 0,
+"to": "task14",
+"to_port": 0
+}, {
+"from": "sequence7",
+"from_port": 1,
+"to": "task15",
+"to_port": 0
+}, {
+"from": "sequence6",
+"from_port": 1,
+"to": "mute5",
+"to_port": 0
+}, {
+"from": "priority_selector3",
+"from_port": 3,
+"to": "priority_condition4",
+"to_port": 0
+}, {
+"from": "priority_selector3",
+"from_port": 2,
+"to": "priority_condition7",
+"to_port": 0
+}, {
+"from": "priority_condition7",
+"from_port": 0,
+"to": "task17",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 1,
+"to": "task7",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 2,
+"to": "wait_node2",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 3,
+"to": "task8",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 4,
+"to": "task16",
+"to_port": 0
+}, {
+"from": "sequence5",
+"from_port": 0,
+"to": "task18",
+"to_port": 0
+}, {
+"from": "sequence4",
+"from_port": 1,
+"to": "task6",
+"to_port": 0
+}, {
+"from": "sequence4",
+"from_port": 2,
+"to": "wait_node",
+"to_port": 0
+}, {
+"from": "sequence4",
+"from_port": 0,
+"to": "task19",
+"to_port": 0
+}, {
+"from": "sequence3",
+"from_port": 4,
+"to": "task20",
+"to_port": 0
+}, {
+"from": "priority_selector4",
+"from_port": 0,
+"to": "priority_condition8",
+"to_port": 0
+}, {
+"from": "parallel2",
+"from_port": 0,
+"to": "repeat",
+"to_port": 0
+}, {
+"from": "parallel2",
+"from_port": 1,
+"to": "repeat3",
+"to_port": 0
+}, {
+"from": "priority_condition8",
+"from_port": 0,
+"to": "parallel2",
+"to_port": 0
+}, {
+"from": "priority_selector4",
+"from_port": 1,
+"to": "priority_condition9",
+"to_port": 0
+}, {
+"from": "root",
+"from_port": 0,
+"to": "parallel",
+"to_port": 0
+}, {
+"from": "priority_condition9",
+"from_port": 0,
+"to": "sequence8",
+"to_port": 0
+}, {
+"from": "sequence8",
+"from_port": 0,
+"to": "task21",
+"to_port": 0
+}, {
+"from": "sequence8",
+"from_port": 1,
+"to": "task22",
+"to_port": 0
+}, {
+"from": "repeat4",
+"from_port": 0,
+"to": "mute6",
+"to_port": 0
+}, {
+"from": "mute6",
+"from_port": 0,
+"to": "priority_selector4",
+"to_port": 0
+}, {
+"from": "parallel",
+"from_port": 1,
+"to": "repeat4",
+"to_port": 0
+} ],
+"nodes": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_mouse",
+"offset": Vector2( 1270, -430 ),
+"params": [  ],
+"size": Vector2( 338, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1020, -330 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 764.893, -243.112 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 454.865, -109.148 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+} ],
+"data": {
+"fn": "task_is_alive",
+"offset": Vector2( 1130.46, 293.324 ),
+"size": Vector2( 286.172, 55.0001 )
+},
+"name": "priority_condition8",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1091.41, 820.407 ),
+"size": Vector2( 293, 55.0001 )
+},
+"name": "priority_condition9",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 831.41, 530.407 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector4",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 660.478, 387.016 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute6",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 420.478, 267.016 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 210, 70 ),
+"size": Vector2( 119, 136 )
+},
+"name": "parallel",
+"type": 6
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 96, 82.0002 )
+},
+"name": "root",
+"type": 0
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_mouse",
+"offset": Vector2( 1270, -430 ),
+"params": [  ],
+"size": Vector2( 338, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1020, -330 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 764.893, -243.112 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 454.865, -109.148 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+} ],
+"data": {
+"fn": "task_is_alive",
+"offset": Vector2( 1130.46, 293.324 ),
+"size": Vector2( 286.172, 55.0001 )
+},
+"name": "priority_condition8",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1091.41, 820.407 ),
+"size": Vector2( 293, 55.0001 )
+},
+"name": "priority_condition9",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 831.41, 530.407 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector4",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 660.478, 387.016 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute6",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 420.478, 267.016 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 210, 70 ),
+"size": Vector2( 119, 136 )
+},
+"name": "parallel",
+"type": 6
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_mouse",
+"offset": Vector2( 1270, -430 ),
+"params": [  ],
+"size": Vector2( 338, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1020, -330 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 764.893, -243.112 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_mouse",
+"offset": Vector2( 1270, -430 ),
+"params": [  ],
+"size": Vector2( 338, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1020, -330 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 764.893, -243.112 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 454.865, -109.148 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_mouse",
+"offset": Vector2( 1270, -430 ),
+"params": [  ],
+"size": Vector2( 338, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1020, -330 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_look_at_mouse",
+"offset": Vector2( 1270, -430 ),
+"params": [  ],
+"size": Vector2( 338, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1091.41, 820.407 ),
+"size": Vector2( 293, 55.0001 )
+},
+"name": "priority_condition9",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+} ],
+"data": {
+"fn": "task_is_alive",
+"offset": Vector2( 1130.46, 293.324 ),
+"size": Vector2( 286.172, 55.0001 )
+},
+"name": "priority_condition8",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1091.41, 820.407 ),
+"size": Vector2( 293, 55.0001 )
+},
+"name": "priority_condition9",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 831.41, 530.407 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector4",
+"type": 4
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+} ],
+"data": {
+"fn": "task_is_alive",
+"offset": Vector2( 1130.46, 293.324 ),
+"size": Vector2( 286.172, 55.0001 )
+},
+"name": "priority_condition8",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1091.41, 820.407 ),
+"size": Vector2( 293, 55.0001 )
+},
+"name": "priority_condition9",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 831.41, 530.407 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector4",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 660.478, 387.016 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute6",
+"type": 7
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+} ],
+"data": {
+"fn": "task_is_alive",
+"offset": Vector2( 1130.46, 293.324 ),
+"size": Vector2( 286.172, 55.0001 )
+},
+"name": "priority_condition8",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1091.41, 820.407 ),
+"size": Vector2( 293, 55.0001 )
+},
+"name": "priority_condition9",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 831.41, 530.407 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector4",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 660.478, 387.016 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute6",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 420.478, 267.016 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+} ],
+"data": {
+"fn": "task_is_alive",
+"offset": Vector2( 1130.46, 293.324 ),
+"size": Vector2( 286.172, 55.0001 )
+},
+"name": "priority_condition8",
+"type": 5
+} ],
+"root": {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_mouse",
+"offset": Vector2( 1270, -430 ),
+"params": [  ],
+"size": Vector2( 338, 85.0002 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1020, -330 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 764.893, -243.112 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 454.865, -109.148 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4097.55, -353.536 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4827.55, -203.536 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4827.55, -73.5358 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task11",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4627.55, -183.536 ),
+"size": Vector2( 135.001, 109 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4307.55, -203.536 ),
+"size": Vector2( 205, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4097.55, -213.536 ),
+"size": Vector2( 116, 55.0002 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4107.55, -113.536 ),
+"params": [ [ 100, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 100 ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4107.55, 16.4639 ),
+"params": [  ],
+"size": Vector2( 300, 85 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 4106.54, 118.354 ),
+"params": [ [ "HU HA HU HA", 1 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ "HU HA HU HA" ]
+},
+"name": "task20",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3856.54, -111.646 ),
+"size": Vector2( 143, 190 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_dash",
+"offset": Vector2( 3433.81, 275.417 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4113.24, 430.832 ),
+"params": [ [ "gun", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "gun" ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 4859.53, 590.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_print",
+"offset": Vector2( 4859.53, 720.92 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 299.999, 109 ),
+"values": [ "reload" ]
+},
+"name": "task15",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 4659.53, 610.92 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 4346.54, 588.354 ),
+"size": Vector2( 205.001, 55.0002 )
+},
+"name": "while_node2",
+"type": 9
+} ],
+"data": {
+"offset": Vector2( 4129.53, 580.92 ),
+"size": Vector2( 116.001, 55.0001 )
+},
+"name": "mute5",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speed",
+"offset": Vector2( 4123.24, 670.832 ),
+"params": [ [ 350, 0 ] ],
+"size": Vector2( 300.001, 109 ),
+"values": [ 350 ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_move",
+"offset": Vector2( 4123.24, 800.832 ),
+"params": [  ],
+"size": Vector2( 300.001, 84.9996 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 3863.24, 650.832 ),
+"size": Vector2( 143, 163 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not__dash",
+"offset": Vector2( 3436.54, 458.354 ),
+"size": Vector2( 317.001, 55.0002 )
+},
+"name": "priority_condition3",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3175.65, 314.502 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_input",
+"offset": Vector2( 2785.65, 214.502 ),
+"size": Vector2( 296.001, 55.0001 )
+},
+"name": "priority_condition",
+"type": 5
+} ],
+"data": {
+"count": 1,
+"offset": Vector2( 2403.58, 80.241 ),
+"size": Vector2( 176, 82 )
+},
+"name": "priority_selector",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2143.46, 77.775 ),
+"size": Vector2( 107, 55.0001 )
+},
+"name": "mute",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 37.5959 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3284.06, 998.765 ),
+"params": [ [ "RELOADING !", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "RELOADING !" ]
+},
+"name": "task18",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 3284.95, 1119.05 ),
+"params": [ [ "reload", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "reload" ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 120.0,
+"offset": Vector2( 3284.95, 1249.05 ),
+"size": Vector2( 194, 55.0002 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [  ],
+"data": {
+"fn": "task_do_reload",
+"offset": Vector2( 3284.95, 1319.05 ),
+"params": [  ],
+"size": Vector2( 311, 85 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_end_reload",
+"offset": Vector2( 3284.95, 1419.05 ),
+"params": [  ],
+"size": Vector2( 317, 84.9995 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 5,
+"offset": Vector2( 3074.06, 1198.77 ),
+"size": Vector2( 143.001, 190 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_reloading",
+"offset": Vector2( 2665.51, 1311.96 ),
+"size": Vector2( 312, 55.0002 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3054.06, 1558.77 ),
+"params": [  ],
+"size": Vector2( 317, 84.9999 ),
+"values": [  ]
+},
+"name": "task9",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_reload",
+"offset": Vector2( 2665.79, 1477.52 ),
+"size": Vector2( 296.001, 55 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_start_reload",
+"offset": Vector2( 3090.43, 1768.72 ),
+"params": [  ],
+"size": Vector2( 317, 84.9998 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_out_of_ammo",
+"offset": Vector2( 2654.06, 1688.77 ),
+"size": Vector2( 343.001, 55.0002 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 3264.06, 1928.77 ),
+"params": [ [ "PEW !!!", 1 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ "PEW !!!" ]
+},
+"name": "task19",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3264.06, 2058.76 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 300, 109 ),
+"values": [ 2000 ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3264.06, 2188.76 ),
+"size": Vector2( 194, 55.0005 )
+},
+"name": "wait_node",
+"type": 10
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3022.54, 2035.17 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_firing",
+"offset": Vector2( 2653.69, 1931.98 ),
+"size": Vector2( 296, 55.0002 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 4,
+"offset": Vector2( 2372.13, 1332.59 ),
+"size": Vector2( 184, 163 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 2160.85, 872.573 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 1834.06, 368.766 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat3",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1606.81, 153.204 ),
+"size": Vector2( 128, 109 )
+},
+"name": "parallel2",
+"type": 6
+} ],
+"data": {
+"fn": "task_is_alive",
+"offset": Vector2( 1130.46, 293.324 ),
+"size": Vector2( 286.172, 55.0001 )
+},
+"name": "priority_condition8",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_anim",
+"offset": Vector2( 1661.41, 820.407 ),
+"params": [ [ "died", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "died" ]
+},
+"name": "task21",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_say",
+"offset": Vector2( 1661.41, 1050.41 ),
+"params": [ [ "GAME OVER !", 1 ] ],
+"size": Vector2( 297, 109 ),
+"values": [ "GAME OVER !" ]
+},
+"name": "task22",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1451.41, 930.407 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence8",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1091.41, 820.407 ),
+"size": Vector2( 293, 55.0001 )
+},
+"name": "priority_condition9",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 831.41, 530.407 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector4",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 660.478, 387.016 ),
+"size": Vector2( 115, 55 )
+},
+"name": "mute6",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 420.478, 267.016 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 210, 70 ),
+"size": Vector2( 119, 136 )
+},
+"name": "parallel",
+"type": 6
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 96, 82.0002 )
+},
+"name": "root",
+"type": 0
+}
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+editor/display_folded = true
+frames = SubResource( 2 )
+animation = "gun"
+
+[node name="shoot" type="Node2D" parent="AnimatedSprite"]
+position = Vector2( 34.3462, 11.064 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="say" type="Label" parent="."]
+margin_left = -62.6446
+margin_top = -42.346
+margin_right = 69.3554
+margin_bottom = -28.346
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="hp" type="Label" parent="."]
+margin_left = -56.2962
+margin_top = 29.5479
+margin_right = -16.2962
+margin_bottom = 43.5479
+align = 1
+valign = 1
+
+[node name="ammo" type="Label" parent="."]
+margin_left = 15.1634
+margin_top = 29.5479
+margin_right = 55.1634
+margin_bottom = 43.5479
+align = 1
+valign = 1
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
