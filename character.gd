@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 var ammo = 10
 var input = Vector2.ZERO
@@ -6,6 +6,18 @@ var max_speed = 40
 var health = 100
 var agro = []
 
+
+func task_heal(task):
+	health += 2
+	task.succeed()
+	return
+
+func task_is_health_not_full(task):
+	if  health < 100:
+		task.succeed()
+	else:
+		task.failed()
+	return
 
 func task_destroy(task):
 	queue_free()
@@ -93,7 +105,7 @@ var tspeed = Vector2.ZERO
 
 func _physics_process(delta):
 	speed = speed.linear_interpolate(tspeed, 0.5)
-	speed = move_and_slide(speed)
+	linear_velocity = speed
 	tspeed *= 0.8
 	return
 

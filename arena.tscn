@@ -28,7 +28,6 @@ outlines = [ PoolVector2Array( -992, -928, 768, -928, 768, 1248, -1056, 1248, -1
 position = Vector2( 416, 704 )
 
 [node name="TileMap" type="TileMap" parent="."]
-editor/display_folded = true
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -105,6 +104,21 @@ position = Vector2( -128, 469.5 )
 
 [node name="hide18" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( -352, 576 )
+
+[node name="hide39" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( 96, 864 )
+
+[node name="hide35" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -704, 768 )
+
+[node name="hide36" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -704, 544 )
+
+[node name="hide37" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -928, 412 )
+
+[node name="hide38" parent="TileMap" instance=ExtResource( 3 )]
+position = Vector2( -928, -32 )
 
 [node name="hide8" parent="TileMap" instance=ExtResource( 3 )]
 position = Vector2( -64, 256 )

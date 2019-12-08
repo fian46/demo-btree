@@ -42,6 +42,17 @@ func get_player():
 #BEGIN
 #########################
 
+
+func task_is_not_so_ok(task):
+	if  health < 40:
+		task.succeed()
+	else:
+		task.failed()
+	return
+
+func task_find_cover():
+	return
+
 func task_look_at_player(task):
 	if  get_player():
 		$AnimatedSprite.look_at(get_player().global_position)

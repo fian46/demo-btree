@@ -93,11 +93,6 @@ tree = {
 "to": "priority_selector",
 "to_port": 0
 }, {
-"from": "priority_selector",
-"from_port": 0,
-"to": "priority_condition",
-"to_port": 0
-}, {
 "from": "sequence3",
 "from_port": 0,
 "to": "task5",
@@ -126,11 +121,6 @@ tree = {
 "from": "sequence2",
 "from_port": 1,
 "to": "while_node",
-"to_port": 0
-}, {
-"from": "priority_selector",
-"from_port": 1,
-"to": "priority_condition2",
 "to_port": 0
 }, {
 "from": "mute2",
@@ -287,6 +277,21 @@ tree = {
 "from_port": 0,
 "to": "task17",
 "to_port": 0
+}, {
+"from": "priority_selector",
+"from_port": 2,
+"to": "priority_condition2",
+"to_port": 0
+}, {
+"from": "priority_selector",
+"from_port": 1,
+"to": "priority_condition",
+"to_port": 0
+}, {
+"from": "priority_selector",
+"from_port": 0,
+"to": "priority_condition7",
+"to_port": 0
 } ],
 "nodes": [ {
 "child": [ {
@@ -297,7 +302,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_speed",
-"offset": Vector2( 1282.18, -626.283 ),
+"offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -309,7 +314,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
+"offset": Vector2( 1627.4, -1037.27 ),
 "params": [  ],
 "size": Vector2( 332, 84.9998 ),
 "values": [  ]
@@ -319,7 +324,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_died",
-"offset": Vector2( 1289.38, -283.057 ),
+"offset": Vector2( 1299.03, -1092.5 ),
 "size": Vector2( 221, 55 )
 },
 "name": "while_node",
@@ -327,14 +332,14 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1022.18, -466.283 ),
+"offset": Vector2( 1031.83, -1275.72 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence2",
 "type": 2
 } ],
 "data": {
-"offset": Vector2( 786.773, -344.43 ),
+"offset": Vector2( 796.427, -1153.87 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute2",
@@ -342,7 +347,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 500, -310 ),
+"offset": Vector2( 509.654, -1119.44 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat2",
@@ -351,6 +356,15 @@ tree = {
 "child": [ {
 "child": [ {
 "child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1220, 110 ),
+"size": Vector2( 318, 55 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
 "child": [ {
 "child": [ {
 "child": [ {
@@ -360,7 +374,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
+"offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
 "size": Vector2( 332, 85 ),
 "values": [  ]
@@ -370,7 +384,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
+"offset": Vector2( 2871.8, -87.192 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat3",
@@ -381,9 +395,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
+"offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
+"size": Vector2( 261.001, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -392,7 +406,7 @@ tree = {
 "child": [  ],
 "data": {
 "count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
+"offset": Vector2( 3374.03, 308.19 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node2",
@@ -400,7 +414,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
+"offset": Vector2( 3134.39, 205.966 ),
 "size": Vector2( 143, 109 )
 },
 "name": "sequence5",
@@ -408,7 +422,7 @@ tree = {
 } ],
 "data": {
 "count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
+"offset": Vector2( 2871.8, 165.096 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat4",
@@ -416,7 +430,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
+"offset": Vector2( 2722.3, 16.903 ),
 "size": Vector2( 101, 109 )
 },
 "name": "race",
@@ -426,8 +440,8 @@ tree = {
 "child": [  ],
 "data": {
 "count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -437,16 +451,16 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
+"offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332, 84.9999 ),
+"size": Vector2( 332.001, 85 ),
 "values": [  ]
 },
 "name": "task17",
 "type": 1
 } ],
 "data": {
-"offset": Vector2( 3180, 80 ),
+"offset": Vector2( 3228.19, 581.082 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute4",
@@ -454,8 +468,8 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "repeat6",
 "type": 8
@@ -468,9 +482,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
+"offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9998 ),
+"size": Vector2( 313, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -479,9 +493,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
+"offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 333, 84.9998 ),
 "values": [  ]
 },
 "name": "task13",
@@ -490,9 +504,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
+"offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 85 ),
+"size": Vector2( 305.001, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -500,7 +514,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
+"offset": Vector2( 3913.63, 593.206 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence6",
@@ -508,8 +522,8 @@ tree = {
 } ],
 "data": {
 "fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
 },
 "name": "priority_condition5",
 "type": 5
@@ -519,7 +533,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
+"offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
 "size": Vector2( 313, 84.9999 ),
 "values": [  ]
@@ -530,7 +544,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
+"offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
 "size": Vector2( 333, 84.9999 ),
 "values": [  ]
@@ -541,9 +555,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
+"offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9998 ),
+"size": Vector2( 305, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -551,7 +565,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
+"offset": Vector2( 3958.12, 971.151 ),
 "size": Vector2( 144, 136 )
 },
 "name": "sequence7",
@@ -559,30 +573,30 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
 },
 "name": "priority_condition6",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
+"offset": Vector2( 3333.63, 723.206 ),
 "size": Vector2( 184, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
 },
 "name": "mute3",
 "type": 7
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2920, 170 ),
+"offset": Vector2( 2968.19, 671.082 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "repeat5",
@@ -590,7 +604,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2730, 80 ),
+"offset": Vector2( 2778.19, 581.082 ),
 "size": Vector2( 110, 136 )
 },
 "name": "race2",
@@ -598,7 +612,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2390, 0 ),
+"offset": Vector2( 2438.19, 501.082 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence4",
@@ -606,7 +620,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
+"offset": Vector2( 1948.19, 561.082 ),
 "size": Vector2( 348, 55.0001 )
 },
 "name": "priority_condition3",
@@ -617,9 +631,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
+"offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
+"size": Vector2( 391.001, 85.0001 ),
 "values": [  ]
 },
 "name": "task2",
@@ -628,7 +642,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
+"offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
 "size": Vector2( 333.001, 85.0001 ),
 "values": [  ]
@@ -639,9 +653,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
+"offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333, 84.9996 ),
+"size": Vector2( 333.001, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -649,7 +663,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2310, 430 ),
+"offset": Vector2( 2358.19, 931.082 ),
 "size": Vector2( 135, 136 )
 },
 "name": "sequence",
@@ -657,15 +671,15 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
 },
 "name": "priority_condition4",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1660, 170 ),
+"offset": Vector2( 1708.19, 671.082 ),
 "size": Vector2( 185, 109 )
 },
 "name": "priority_selector2",
@@ -673,7 +687,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_player",
-"offset": Vector2( 1270, 370 ),
+"offset": Vector2( 1318.19, 871.082 ),
 "size": Vector2( 314.74, 55 )
 },
 "name": "priority_condition",
@@ -684,9 +698,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
+"offset": Vector2( 2024.15, 1717.15 ),
 "params": [  ],
-"size": Vector2( 391, 84.9998 ),
+"size": Vector2( 391, 84.9996 ),
 "values": [  ]
 },
 "name": "task5",
@@ -695,7 +709,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
+"offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -706,7 +720,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
+"offset": Vector2( 2024.15, 1987.15 ),
 "params": [  ],
 "size": Vector2( 333, 84.9995 ),
 "values": [  ]
@@ -716,7 +730,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
+"offset": Vector2( 1754.15, 1787.15 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence3",
@@ -724,22 +738,22 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_not_player",
-"offset": Vector2( 1266.23, 581.688 ),
-"size": Vector2( 329, 55.0001 )
+"offset": Vector2( 1298.63, 1659 ),
+"size": Vector2( 329, 55 )
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
-"count": 2,
-"offset": Vector2( 980, 390 ),
-"size": Vector2( 179.414, 109 )
+"count": 3,
+"offset": Vector2( 1020, 790 ),
+"size": Vector2( 179.414, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 750, 360 ),
+"offset": Vector2( 775.196, 786.63 ),
 "size": Vector2( 107, 55.0001 )
 },
 "name": "mute",
@@ -747,7 +761,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 475.818, 287.338 ),
+"offset": Vector2( 501.014, 713.968 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat",
@@ -771,9 +785,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
+"offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
+"size": Vector2( 391.001, 85.0001 ),
 "values": [  ]
 },
 "name": "task2",
@@ -782,9 +796,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
+"offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333, 84.9996 ),
+"size": Vector2( 333.001, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -797,7 +811,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_speed",
-"offset": Vector2( 1282.18, -626.283 ),
+"offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -809,7 +823,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
+"offset": Vector2( 1627.4, -1037.27 ),
 "params": [  ],
 "size": Vector2( 332, 84.9998 ),
 "values": [  ]
@@ -819,7 +833,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_died",
-"offset": Vector2( 1289.38, -283.057 ),
+"offset": Vector2( 1299.03, -1092.5 ),
 "size": Vector2( 221, 55 )
 },
 "name": "while_node",
@@ -827,14 +841,14 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1022.18, -466.283 ),
+"offset": Vector2( 1031.83, -1275.72 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence2",
 "type": 2
 } ],
 "data": {
-"offset": Vector2( 786.773, -344.43 ),
+"offset": Vector2( 796.427, -1153.87 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute2",
@@ -842,7 +856,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 500, -310 ),
+"offset": Vector2( 509.654, -1119.44 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat2",
@@ -851,6 +865,15 @@ tree = {
 "child": [ {
 "child": [ {
 "child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1220, 110 ),
+"size": Vector2( 318, 55 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
 "child": [ {
 "child": [ {
 "child": [ {
@@ -860,7 +883,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
+"offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
 "size": Vector2( 332, 85 ),
 "values": [  ]
@@ -870,7 +893,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
+"offset": Vector2( 2871.8, -87.192 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat3",
@@ -881,9 +904,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
+"offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
+"size": Vector2( 261.001, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -892,7 +915,7 @@ tree = {
 "child": [  ],
 "data": {
 "count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
+"offset": Vector2( 3374.03, 308.19 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node2",
@@ -900,7 +923,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
+"offset": Vector2( 3134.39, 205.966 ),
 "size": Vector2( 143, 109 )
 },
 "name": "sequence5",
@@ -908,7 +931,7 @@ tree = {
 } ],
 "data": {
 "count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
+"offset": Vector2( 2871.8, 165.096 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat4",
@@ -916,7 +939,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
+"offset": Vector2( 2722.3, 16.903 ),
 "size": Vector2( 101, 109 )
 },
 "name": "race",
@@ -926,8 +949,8 @@ tree = {
 "child": [  ],
 "data": {
 "count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -937,16 +960,16 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
+"offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332, 84.9999 ),
+"size": Vector2( 332.001, 85 ),
 "values": [  ]
 },
 "name": "task17",
 "type": 1
 } ],
 "data": {
-"offset": Vector2( 3180, 80 ),
+"offset": Vector2( 3228.19, 581.082 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute4",
@@ -954,8 +977,8 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "repeat6",
 "type": 8
@@ -968,9 +991,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
+"offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9998 ),
+"size": Vector2( 313, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -979,9 +1002,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
+"offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 333, 84.9998 ),
 "values": [  ]
 },
 "name": "task13",
@@ -990,9 +1013,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
+"offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 85 ),
+"size": Vector2( 305.001, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -1000,7 +1023,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
+"offset": Vector2( 3913.63, 593.206 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence6",
@@ -1008,8 +1031,8 @@ tree = {
 } ],
 "data": {
 "fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
 },
 "name": "priority_condition5",
 "type": 5
@@ -1019,7 +1042,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
+"offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
 "size": Vector2( 313, 84.9999 ),
 "values": [  ]
@@ -1030,7 +1053,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
+"offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
 "size": Vector2( 333, 84.9999 ),
 "values": [  ]
@@ -1041,9 +1064,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
+"offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9998 ),
+"size": Vector2( 305, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -1051,7 +1074,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
+"offset": Vector2( 3958.12, 971.151 ),
 "size": Vector2( 144, 136 )
 },
 "name": "sequence7",
@@ -1059,30 +1082,30 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
 },
 "name": "priority_condition6",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
+"offset": Vector2( 3333.63, 723.206 ),
 "size": Vector2( 184, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
 },
 "name": "mute3",
 "type": 7
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2920, 170 ),
+"offset": Vector2( 2968.19, 671.082 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "repeat5",
@@ -1090,7 +1113,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2730, 80 ),
+"offset": Vector2( 2778.19, 581.082 ),
 "size": Vector2( 110, 136 )
 },
 "name": "race2",
@@ -1098,7 +1121,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2390, 0 ),
+"offset": Vector2( 2438.19, 501.082 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence4",
@@ -1106,7 +1129,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
+"offset": Vector2( 1948.19, 561.082 ),
 "size": Vector2( 348, 55.0001 )
 },
 "name": "priority_condition3",
@@ -1117,9 +1140,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
+"offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
+"size": Vector2( 391.001, 85.0001 ),
 "values": [  ]
 },
 "name": "task2",
@@ -1128,7 +1151,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
+"offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
 "size": Vector2( 333.001, 85.0001 ),
 "values": [  ]
@@ -1139,9 +1162,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
+"offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333, 84.9996 ),
+"size": Vector2( 333.001, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -1149,7 +1172,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2310, 430 ),
+"offset": Vector2( 2358.19, 931.082 ),
 "size": Vector2( 135, 136 )
 },
 "name": "sequence",
@@ -1157,15 +1180,15 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
 },
 "name": "priority_condition4",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1660, 170 ),
+"offset": Vector2( 1708.19, 671.082 ),
 "size": Vector2( 185, 109 )
 },
 "name": "priority_selector2",
@@ -1173,7 +1196,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_player",
-"offset": Vector2( 1270, 370 ),
+"offset": Vector2( 1318.19, 871.082 ),
 "size": Vector2( 314.74, 55 )
 },
 "name": "priority_condition",
@@ -1184,9 +1207,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
+"offset": Vector2( 2024.15, 1717.15 ),
 "params": [  ],
-"size": Vector2( 391, 84.9998 ),
+"size": Vector2( 391, 84.9996 ),
 "values": [  ]
 },
 "name": "task5",
@@ -1195,7 +1218,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
+"offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -1206,7 +1229,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
+"offset": Vector2( 2024.15, 1987.15 ),
 "params": [  ],
 "size": Vector2( 333, 84.9995 ),
 "values": [  ]
@@ -1216,7 +1239,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
+"offset": Vector2( 1754.15, 1787.15 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence3",
@@ -1224,22 +1247,22 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_not_player",
-"offset": Vector2( 1266.23, 581.688 ),
-"size": Vector2( 329, 55.0001 )
+"offset": Vector2( 1298.63, 1659 ),
+"size": Vector2( 329, 55 )
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
-"count": 2,
-"offset": Vector2( 980, 390 ),
-"size": Vector2( 179.414, 109 )
+"count": 3,
+"offset": Vector2( 1020, 790 ),
+"size": Vector2( 179.414, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 750, 360 ),
+"offset": Vector2( 775.196, 786.63 ),
 "size": Vector2( 107, 55.0001 )
 },
 "name": "mute",
@@ -1247,7 +1270,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 475.818, 287.338 ),
+"offset": Vector2( 501.014, 713.968 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat",
@@ -1263,6 +1286,15 @@ tree = {
 }, {
 "child": [ {
 "child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1220, 110 ),
+"size": Vector2( 318, 55 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
 "child": [ {
 "child": [ {
 "child": [ {
@@ -1272,7 +1304,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
+"offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
 "size": Vector2( 332, 85 ),
 "values": [  ]
@@ -1282,7 +1314,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
+"offset": Vector2( 2871.8, -87.192 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat3",
@@ -1293,9 +1325,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
+"offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
+"size": Vector2( 261.001, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -1304,7 +1336,7 @@ tree = {
 "child": [  ],
 "data": {
 "count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
+"offset": Vector2( 3374.03, 308.19 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node2",
@@ -1312,7 +1344,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
+"offset": Vector2( 3134.39, 205.966 ),
 "size": Vector2( 143, 109 )
 },
 "name": "sequence5",
@@ -1320,7 +1352,7 @@ tree = {
 } ],
 "data": {
 "count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
+"offset": Vector2( 2871.8, 165.096 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat4",
@@ -1328,7 +1360,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
+"offset": Vector2( 2722.3, 16.903 ),
 "size": Vector2( 101, 109 )
 },
 "name": "race",
@@ -1338,8 +1370,8 @@ tree = {
 "child": [  ],
 "data": {
 "count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -1349,16 +1381,16 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
+"offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332, 84.9999 ),
+"size": Vector2( 332.001, 85 ),
 "values": [  ]
 },
 "name": "task17",
 "type": 1
 } ],
 "data": {
-"offset": Vector2( 3180, 80 ),
+"offset": Vector2( 3228.19, 581.082 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute4",
@@ -1366,8 +1398,8 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "repeat6",
 "type": 8
@@ -1380,9 +1412,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
+"offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9998 ),
+"size": Vector2( 313, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -1391,9 +1423,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
+"offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 333, 84.9998 ),
 "values": [  ]
 },
 "name": "task13",
@@ -1402,9 +1434,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
+"offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 85 ),
+"size": Vector2( 305.001, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -1412,7 +1444,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
+"offset": Vector2( 3913.63, 593.206 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence6",
@@ -1420,8 +1452,8 @@ tree = {
 } ],
 "data": {
 "fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
 },
 "name": "priority_condition5",
 "type": 5
@@ -1431,7 +1463,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
+"offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
 "size": Vector2( 313, 84.9999 ),
 "values": [  ]
@@ -1442,7 +1474,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
+"offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
 "size": Vector2( 333, 84.9999 ),
 "values": [  ]
@@ -1453,9 +1485,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
+"offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9998 ),
+"size": Vector2( 305, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -1463,7 +1495,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
+"offset": Vector2( 3958.12, 971.151 ),
 "size": Vector2( 144, 136 )
 },
 "name": "sequence7",
@@ -1471,30 +1503,30 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
 },
 "name": "priority_condition6",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
+"offset": Vector2( 3333.63, 723.206 ),
 "size": Vector2( 184, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
 },
 "name": "mute3",
 "type": 7
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2920, 170 ),
+"offset": Vector2( 2968.19, 671.082 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "repeat5",
@@ -1502,7 +1534,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2730, 80 ),
+"offset": Vector2( 2778.19, 581.082 ),
 "size": Vector2( 110, 136 )
 },
 "name": "race2",
@@ -1510,7 +1542,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2390, 0 ),
+"offset": Vector2( 2438.19, 501.082 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence4",
@@ -1518,7 +1550,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
+"offset": Vector2( 1948.19, 561.082 ),
 "size": Vector2( 348, 55.0001 )
 },
 "name": "priority_condition3",
@@ -1529,9 +1561,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
+"offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
+"size": Vector2( 391.001, 85.0001 ),
 "values": [  ]
 },
 "name": "task2",
@@ -1540,7 +1572,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
+"offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
 "size": Vector2( 333.001, 85.0001 ),
 "values": [  ]
@@ -1551,9 +1583,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
+"offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333, 84.9996 ),
+"size": Vector2( 333.001, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -1561,7 +1593,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2310, 430 ),
+"offset": Vector2( 2358.19, 931.082 ),
 "size": Vector2( 135, 136 )
 },
 "name": "sequence",
@@ -1569,15 +1601,15 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
 },
 "name": "priority_condition4",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1660, 170 ),
+"offset": Vector2( 1708.19, 671.082 ),
 "size": Vector2( 185, 109 )
 },
 "name": "priority_selector2",
@@ -1585,7 +1617,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_player",
-"offset": Vector2( 1270, 370 ),
+"offset": Vector2( 1318.19, 871.082 ),
 "size": Vector2( 314.74, 55 )
 },
 "name": "priority_condition",
@@ -1596,9 +1628,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
+"offset": Vector2( 2024.15, 1717.15 ),
 "params": [  ],
-"size": Vector2( 391, 84.9998 ),
+"size": Vector2( 391, 84.9996 ),
 "values": [  ]
 },
 "name": "task5",
@@ -1607,7 +1639,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
+"offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -1618,7 +1650,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
+"offset": Vector2( 2024.15, 1987.15 ),
 "params": [  ],
 "size": Vector2( 333, 84.9995 ),
 "values": [  ]
@@ -1628,7 +1660,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
+"offset": Vector2( 1754.15, 1787.15 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence3",
@@ -1636,31 +1668,223 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_not_player",
-"offset": Vector2( 1266.23, 581.688 ),
-"size": Vector2( 329, 55.0001 )
+"offset": Vector2( 1298.63, 1659 ),
+"size": Vector2( 329, 55 )
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
-"count": 2,
-"offset": Vector2( 980, 390 ),
-"size": Vector2( 179.414, 109 )
+"count": 3,
+"offset": Vector2( 1020, 790 ),
+"size": Vector2( 179.414, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 750, 360 ),
+"offset": Vector2( 775.196, 786.63 ),
 "size": Vector2( 107, 55.0001 )
 },
 "name": "mute",
 "type": 7
 }, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2638.19, 981.082 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 2024.15, 1717.15 ),
+"params": [  ],
+"size": Vector2( 391, 84.9996 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 2024.15, 1717.15 ),
+"params": [  ],
+"size": Vector2( 391, 84.9996 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2024.15, 1857.15 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2024.15, 1987.15 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1754.15, 1787.15 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2024.15, 1857.15 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2024.15, 1987.15 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1291.83, -1435.72 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1291.83, -1435.72 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1627.4, -1037.27 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1299.03, -1092.5 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1031.83, -1275.72 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+}, {
 "child": [ {
 "child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1291.83, -1435.72 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
 "child": [ {
-"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1627.4, -1037.27 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1299.03, -1092.5 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1031.83, -1275.72 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 796.427, -1153.87 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1627.4, -1037.27 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+}, {
 "child": [ {
 "child": [ {
 "child": [ {
@@ -1669,7 +1893,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
+"offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
 "size": Vector2( 332, 85 ),
 "values": [  ]
@@ -1679,7 +1903,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
+"offset": Vector2( 2871.8, -87.192 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat3",
@@ -1690,9 +1914,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
+"offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
+"size": Vector2( 261.001, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -1701,7 +1925,7 @@ tree = {
 "child": [  ],
 "data": {
 "count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
+"offset": Vector2( 3374.03, 308.19 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node2",
@@ -1709,7 +1933,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
+"offset": Vector2( 3134.39, 205.966 ),
 "size": Vector2( 143, 109 )
 },
 "name": "sequence5",
@@ -1717,7 +1941,7 @@ tree = {
 } ],
 "data": {
 "count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
+"offset": Vector2( 2871.8, 165.096 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat4",
@@ -1725,7 +1949,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
+"offset": Vector2( 2722.3, 16.903 ),
 "size": Vector2( 101, 109 )
 },
 "name": "race",
@@ -1735,8 +1959,8 @@ tree = {
 "child": [  ],
 "data": {
 "count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -1746,16 +1970,16 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
+"offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332, 84.9999 ),
+"size": Vector2( 332.001, 85 ),
 "values": [  ]
 },
 "name": "task17",
 "type": 1
 } ],
 "data": {
-"offset": Vector2( 3180, 80 ),
+"offset": Vector2( 3228.19, 581.082 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute4",
@@ -1763,8 +1987,8 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "repeat6",
 "type": 8
@@ -1777,9 +2001,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
+"offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9998 ),
+"size": Vector2( 313, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -1788,9 +2012,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
+"offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 333, 84.9998 ),
 "values": [  ]
 },
 "name": "task13",
@@ -1799,9 +2023,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
+"offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 85 ),
+"size": Vector2( 305.001, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -1809,7 +2033,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
+"offset": Vector2( 3913.63, 593.206 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence6",
@@ -1817,8 +2041,8 @@ tree = {
 } ],
 "data": {
 "fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
 },
 "name": "priority_condition5",
 "type": 5
@@ -1828,7 +2052,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
+"offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
 "size": Vector2( 313, 84.9999 ),
 "values": [  ]
@@ -1839,7 +2063,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
+"offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
 "size": Vector2( 333, 84.9999 ),
 "values": [  ]
@@ -1850,9 +2074,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
+"offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9998 ),
+"size": Vector2( 305, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -1860,7 +2084,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
+"offset": Vector2( 3958.12, 971.151 ),
 "size": Vector2( 144, 136 )
 },
 "name": "sequence7",
@@ -1868,30 +2092,30 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
 },
 "name": "priority_condition6",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
+"offset": Vector2( 3333.63, 723.206 ),
 "size": Vector2( 184, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
 },
 "name": "mute3",
 "type": 7
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2920, 170 ),
+"offset": Vector2( 2968.19, 671.082 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "repeat5",
@@ -1899,7 +2123,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2730, 80 ),
+"offset": Vector2( 2778.19, 581.082 ),
 "size": Vector2( 110, 136 )
 },
 "name": "race2",
@@ -1907,7 +2131,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2390, 0 ),
+"offset": Vector2( 2438.19, 501.082 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence4",
@@ -1915,7 +2139,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
+"offset": Vector2( 1948.19, 561.082 ),
 "size": Vector2( 348, 55.0001 )
 },
 "name": "priority_condition3",
@@ -1926,9 +2150,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
+"offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
+"size": Vector2( 391.001, 85.0001 ),
 "values": [  ]
 },
 "name": "task2",
@@ -1937,7 +2161,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
+"offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
 "size": Vector2( 333.001, 85.0001 ),
 "values": [  ]
@@ -1948,9 +2172,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
+"offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333, 84.9996 ),
+"size": Vector2( 333.001, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -1958,7 +2182,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2310, 430 ),
+"offset": Vector2( 2358.19, 931.082 ),
 "size": Vector2( 135, 136 )
 },
 "name": "sequence",
@@ -1966,36 +2190,1686 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
 },
 "name": "priority_condition4",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1660, 170 ),
+"offset": Vector2( 1708.19, 671.082 ),
 "size": Vector2( 185, 109 )
 },
 "name": "priority_selector2",
 "type": 4
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3117.69, -93.014 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
 } ],
 "data": {
-"fn": "task_is_player",
-"offset": Vector2( 1270, 370 ),
-"size": Vector2( 314.74, 55 )
+"count": 0.0,
+"offset": Vector2( 2871.8, -87.192 ),
+"size": Vector2( 194, 55 )
 },
-"name": "priority_condition",
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3134.39, 205.966 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2871.8, 165.096 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2722.3, 16.903 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3228.19, 581.082 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
 "type": 5
 }, {
 "child": [ {
 "child": [ {
 "child": [  ],
 "data": {
-"fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 391, 84.9998 ),
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2968.19, 671.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2778.19, 581.082 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2438.19, 501.082 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1948.19, 561.082 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2638.19, 841.082 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2638.19, 981.082 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2648.19, 1121.08 ),
+"params": [  ],
+"size": Vector2( 333.001, 84.9995 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2358.19, 931.082 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
+},
+"name": "priority_condition4",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3117.69, -93.014 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2871.8, -87.192 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3134.39, 205.966 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2871.8, 165.096 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2722.3, 16.903 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3228.19, 581.082 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2968.19, 671.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2778.19, 581.082 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2438.19, 501.082 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3117.69, -93.014 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2871.8, -87.192 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3134.39, 205.966 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2871.8, 165.096 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2722.3, 16.903 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2638.19, 841.082 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2638.19, 981.082 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2648.19, 1121.08 ),
+"params": [  ],
+"size": Vector2( 333.001, 84.9995 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2358.19, 931.082 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3134.39, 205.966 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1627.4, -1037.27 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1299.03, -1092.5 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+}, {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3117.69, -93.014 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3228.19, 581.082 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2968.19, 671.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2778.19, 581.082 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2968.19, 671.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+}, {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
+},
+"name": "mute3",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3228.19, 581.082 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3228.19, 581.082 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+}, {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3134.39, 205.966 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2871.8, 165.096 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3117.69, -93.014 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2871.8, -87.192 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 2024.15, 1717.15 ),
+"params": [  ],
+"size": Vector2( 391, 84.9996 ),
 "values": [  ]
 },
 "name": "task5",
@@ -2004,7 +3878,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
+"offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -2015,7 +3889,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
+"offset": Vector2( 2024.15, 1987.15 ),
 "params": [  ],
 "size": Vector2( 333, 84.9995 ),
 "values": [  ]
@@ -2025,7 +3899,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
+"offset": Vector2( 1754.15, 1787.15 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence3",
@@ -2033,22 +3907,470 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_not_player",
-"offset": Vector2( 1266.23, 581.688 ),
-"size": Vector2( 329, 55.0001 )
+"offset": Vector2( 1298.63, 1659 ),
+"size": Vector2( 329, 55 )
+},
+"name": "priority_condition2",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_speed",
+"offset": Vector2( 1291.83, -1435.72 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_destroy",
+"offset": Vector2( 1627.4, -1037.27 ),
+"params": [  ],
+"size": Vector2( 332, 84.9998 ),
+"values": [  ]
+},
+"name": "task8",
+"type": 1
+} ],
+"data": {
+"fn": "task_is_died",
+"offset": Vector2( 1299.03, -1092.5 ),
+"size": Vector2( 221, 55 )
+},
+"name": "while_node",
+"type": 9
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1031.83, -1275.72 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( 796.427, -1153.87 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute2",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 509.654, -1119.44 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat2",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1220, 110 ),
+"size": Vector2( 318, 55 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3117.69, -93.014 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2871.8, -87.192 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3134.39, 205.966 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2871.8, 165.096 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2722.3, 16.903 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3228.19, 581.082 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2968.19, 671.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2778.19, 581.082 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2438.19, 501.082 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1948.19, 561.082 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2638.19, 841.082 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2638.19, 981.082 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2648.19, 1121.08 ),
+"params": [  ],
+"size": Vector2( 333.001, 84.9995 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2358.19, 931.082 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1708.19, 671.082 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1318.19, 871.082 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_hide",
+"offset": Vector2( 2024.15, 1717.15 ),
+"params": [  ],
+"size": Vector2( 391, 84.9996 ),
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2024.15, 1857.15 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2024.15, 1987.15 ),
+"params": [  ],
+"size": Vector2( 333, 84.9995 ),
+"values": [  ]
+},
+"name": "task7",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 1754.15, 1787.15 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence3",
+"type": 2
+} ],
+"data": {
+"fn": "task_is_not_player",
+"offset": Vector2( 1298.63, 1659 ),
+"size": Vector2( 329, 55 )
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
-"count": 2,
-"offset": Vector2( 980, 390 ),
-"size": Vector2( 179.414, 109 )
+"count": 3,
+"offset": Vector2( 1020, 790 ),
+"size": Vector2( 179.414, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 750, 360 ),
+"offset": Vector2( 775.196, 786.63 ),
 "size": Vector2( 107, 55.0001 )
 },
 "name": "mute",
@@ -2056,7 +4378,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 475.818, 287.338 ),
+"offset": Vector2( 501.014, 713.968 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat",
@@ -2065,82 +4387,13 @@ tree = {
 "child": [ {
 "child": [ {
 "child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_speed",
-"offset": Vector2( 1282.18, -626.283 ),
-"params": [  ],
-"size": Vector2( 333, 85 ),
-"values": [  ]
-},
-"name": "task4",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
-"params": [  ],
-"size": Vector2( 332, 84.9998 ),
-"values": [  ]
-},
-"name": "task8",
-"type": 1
-} ],
-"data": {
-"fn": "task_is_died",
-"offset": Vector2( 1289.38, -283.057 ),
-"size": Vector2( 221, 55 )
-},
-"name": "while_node",
-"type": 9
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 1022.18, -466.283 ),
-"size": Vector2( 144, 109 )
-},
-"name": "sequence2",
-"type": 2
-} ],
-"data": {
-"offset": Vector2( 786.773, -344.43 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute2",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 500, -310 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat2",
-"type": 8
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
-"params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
-"values": [  ]
-},
-"name": "task",
-"type": 1
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
 "child": [ {
 "child": [ {
 "child": [ {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
+"offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
 "size": Vector2( 332, 85 ),
 "values": [  ]
@@ -2150,7 +4403,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
+"offset": Vector2( 2871.8, -87.192 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat3",
@@ -2161,9 +4414,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
+"offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
+"size": Vector2( 261.001, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -2172,7 +4425,7 @@ tree = {
 "child": [  ],
 "data": {
 "count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
+"offset": Vector2( 3374.03, 308.19 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node2",
@@ -2180,7 +4433,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
+"offset": Vector2( 3134.39, 205.966 ),
 "size": Vector2( 143, 109 )
 },
 "name": "sequence5",
@@ -2188,7 +4441,7 @@ tree = {
 } ],
 "data": {
 "count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
+"offset": Vector2( 2871.8, 165.096 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat4",
@@ -2196,7 +4449,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
+"offset": Vector2( 2722.3, 16.903 ),
 "size": Vector2( 101, 109 )
 },
 "name": "race",
@@ -2206,8 +4459,8 @@ tree = {
 "child": [  ],
 "data": {
 "count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -2217,16 +4470,16 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
+"offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332, 84.9999 ),
+"size": Vector2( 332.001, 85 ),
 "values": [  ]
 },
 "name": "task17",
 "type": 1
 } ],
 "data": {
-"offset": Vector2( 3180, 80 ),
+"offset": Vector2( 3228.19, 581.082 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute4",
@@ -2234,8 +4487,8 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "repeat6",
 "type": 8
@@ -2248,9 +4501,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
+"offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9998 ),
+"size": Vector2( 313, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -2259,9 +4512,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
+"offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 333, 84.9998 ),
 "values": [  ]
 },
 "name": "task13",
@@ -2270,9 +4523,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
+"offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 85 ),
+"size": Vector2( 305.001, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -2280,7 +4533,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
+"offset": Vector2( 3913.63, 593.206 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence6",
@@ -2288,8 +4541,8 @@ tree = {
 } ],
 "data": {
 "fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
 },
 "name": "priority_condition5",
 "type": 5
@@ -2299,7 +4552,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
+"offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
 "size": Vector2( 313, 84.9999 ),
 "values": [  ]
@@ -2310,7 +4563,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
+"offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
 "size": Vector2( 333, 84.9999 ),
 "values": [  ]
@@ -2321,9 +4574,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
+"offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9998 ),
+"size": Vector2( 305, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -2331,7 +4584,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
+"offset": Vector2( 3958.12, 971.151 ),
 "size": Vector2( 144, 136 )
 },
 "name": "sequence7",
@@ -2339,30 +4592,30 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
 },
 "name": "priority_condition6",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
+"offset": Vector2( 3333.63, 723.206 ),
 "size": Vector2( 184, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
 },
 "name": "mute3",
 "type": 7
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2920, 170 ),
+"offset": Vector2( 2968.19, 671.082 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "repeat5",
@@ -2370,7 +4623,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2730, 80 ),
+"offset": Vector2( 2778.19, 581.082 ),
 "size": Vector2( 110, 136 )
 },
 "name": "race2",
@@ -2378,7 +4631,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2390, 0 ),
+"offset": Vector2( 2438.19, 501.082 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence4",
@@ -2386,7 +4639,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
+"offset": Vector2( 1948.19, 561.082 ),
 "size": Vector2( 348, 55.0001 )
 },
 "name": "priority_condition3",
@@ -2397,9 +4650,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
+"offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
+"size": Vector2( 391.001, 85.0001 ),
 "values": [  ]
 },
 "name": "task2",
@@ -2408,7 +4661,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
+"offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
 "size": Vector2( 333.001, 85.0001 ),
 "values": [  ]
@@ -2419,9 +4672,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
+"offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333, 84.9996 ),
+"size": Vector2( 333.001, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -2429,7 +4682,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2310, 430 ),
+"offset": Vector2( 2358.19, 931.082 ),
 "size": Vector2( 135, 136 )
 },
 "name": "sequence",
@@ -2437,15 +4690,15 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
 },
 "name": "priority_condition4",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1660, 170 ),
+"offset": Vector2( 1708.19, 671.082 ),
 "size": Vector2( 185, 109 )
 },
 "name": "priority_selector2",
@@ -2453,7 +4706,345 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_player",
-"offset": Vector2( 1270, 370 ),
+"offset": Vector2( 1318.19, 871.082 ),
+"size": Vector2( 314.74, 55 )
+},
+"name": "priority_condition",
+"type": 5
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1220, 110 ),
+"size": Vector2( 318, 55 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3117.69, -93.014 ),
+"params": [  ],
+"size": Vector2( 332, 85 ),
+"values": [  ]
+},
+"name": "task12",
+"type": 1
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2871.8, -87.192 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat3",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_fire",
+"offset": Vector2( 3374.03, 178.19 ),
+"params": [ [ 2000, 0 ] ],
+"size": Vector2( 261.001, 109 ),
+"values": [ 2000 ]
+},
+"name": "task9",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 10.0,
+"offset": Vector2( 3374.03, 308.19 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node2",
+"type": 10
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3134.39, 205.966 ),
+"size": Vector2( 143, 109 )
+},
+"name": "sequence5",
+"type": 2
+} ],
+"data": {
+"count": 5.0,
+"offset": Vector2( 2871.8, 165.096 ),
+"size": Vector2( 194, 55 )
+},
+"name": "repeat4",
+"type": 8
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2722.3, 16.903 ),
+"size": Vector2( 101, 109 )
+},
+"name": "race",
+"type": 11
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 200.0,
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "wait_node",
+"type": 10
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_look_at_player",
+"offset": Vector2( 3428.19, 541.082 ),
+"params": [  ],
+"size": Vector2( 332.001, 85 ),
+"values": [  ]
+},
+"name": "task17",
+"type": 1
+} ],
+"data": {
+"offset": Vector2( 3228.19, 581.082 ),
+"size": Vector2( 116, 55 )
+},
+"name": "mute4",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat6",
+"type": 8
+}, {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_right",
+"offset": Vector2( 4138.19, 431.082 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task10",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4138.19, 601.082 ),
+"params": [  ],
+"size": Vector2( 333, 84.9998 ),
+"values": [  ]
+},
+"name": "task13",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4133.63, 753.206 ),
+"params": [  ],
+"size": Vector2( 305.001, 84.9999 ),
+"values": [  ]
+},
+"name": "task14",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3913.63, 593.206 ),
+"size": Vector2( 143, 136 )
+},
+"name": "sequence6",
+"type": 2
+} ],
+"data": {
+"fn": "task_prob",
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
+},
+"name": "priority_condition5",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_strafe_left",
+"offset": Vector2( 4172.14, 907.642 ),
+"params": [  ],
+"size": Vector2( 313, 84.9999 ),
+"values": [  ]
+},
+"name": "task11",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 4172.14, 1027.64 ),
+"params": [  ],
+"size": Vector2( 333, 84.9999 ),
+"values": [  ]
+},
+"name": "task15",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 4172.14, 1127.64 ),
+"params": [  ],
+"size": Vector2( 305, 84.9999 ),
+"values": [  ]
+},
+"name": "task16",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 3958.12, 971.151 ),
+"size": Vector2( 144, 136 )
+},
+"name": "sequence7",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
+},
+"name": "priority_condition6",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 3333.63, 723.206 ),
+"size": Vector2( 184, 109 )
+},
+"name": "priority_selector3",
+"type": 4
+} ],
+"data": {
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
+},
+"name": "mute3",
+"type": 7
+} ],
+"data": {
+"count": 0.0,
+"offset": Vector2( 2968.19, 671.082 ),
+"size": Vector2( 194, 55.0001 )
+},
+"name": "repeat5",
+"type": 8
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2778.19, 581.082 ),
+"size": Vector2( 110, 136 )
+},
+"name": "race2",
+"type": 11
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 2438.19, 501.082 ),
+"size": Vector2( 144, 109 )
+},
+"name": "sequence4",
+"type": 2
+} ],
+"data": {
+"fn": "task_can_shoot_player",
+"offset": Vector2( 1948.19, 561.082 ),
+"size": Vector2( 348, 55.0001 )
+},
+"name": "priority_condition3",
+"type": 5
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_pick_random_save_hide",
+"offset": Vector2( 2638.19, 841.082 ),
+"params": [  ],
+"size": Vector2( 391.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_compute_path",
+"offset": Vector2( 2638.19, 981.082 ),
+"params": [  ],
+"size": Vector2( 333.001, 85.0001 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_run_curve",
+"offset": Vector2( 2648.19, 1121.08 ),
+"params": [  ],
+"size": Vector2( 333.001, 84.9995 ),
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 2358.19, 931.082 ),
+"size": Vector2( 135, 136 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"fn": "task_succeed",
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
+},
+"name": "priority_condition4",
+"type": 5
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 1708.19, 671.082 ),
+"size": Vector2( 185, 109 )
+},
+"name": "priority_selector2",
+"type": 4
+} ],
+"data": {
+"fn": "task_is_player",
+"offset": Vector2( 1318.19, 871.082 ),
 "size": Vector2( 314.74, 55 )
 },
 "name": "priority_condition",
@@ -2464,9 +5055,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
+"offset": Vector2( 2024.15, 1717.15 ),
 "params": [  ],
-"size": Vector2( 391, 84.9998 ),
+"size": Vector2( 391, 84.9996 ),
 "values": [  ]
 },
 "name": "task5",
@@ -2475,7 +5066,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
+"offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -2486,7 +5077,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
+"offset": Vector2( 2024.15, 1987.15 ),
 "params": [  ],
 "size": Vector2( 333, 84.9995 ),
 "values": [  ]
@@ -2496,7 +5087,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
+"offset": Vector2( 1754.15, 1787.15 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence3",
@@ -2504,2560 +5095,28 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_not_player",
-"offset": Vector2( 1266.23, 581.688 ),
-"size": Vector2( 329, 55.0001 )
+"offset": Vector2( 1298.63, 1659 ),
+"size": Vector2( 329, 55 )
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
-"count": 2,
-"offset": Vector2( 980, 390 ),
-"size": Vector2( 179.414, 109 )
+"count": 3,
+"offset": Vector2( 1020, 790 ),
+"size": Vector2( 179.414, 136 )
 },
 "name": "priority_selector",
 "type": 4
 }, {
 "child": [  ],
 "data": {
-"fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
-"params": [  ],
-"size": Vector2( 391, 84.9998 ),
-"values": [  ]
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1220, 110 ),
+"size": Vector2( 318, 55 )
 },
-"name": "task5",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
-"params": [  ],
-"size": Vector2( 391, 84.9998 ),
-"values": [  ]
-},
-"name": "task5",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
-"params": [  ],
-"size": Vector2( 333, 85 ),
-"values": [  ]
-},
-"name": "task6",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
-"params": [  ],
-"size": Vector2( 333, 84.9995 ),
-"values": [  ]
-},
-"name": "task7",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence3",
-"type": 2
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
-"params": [  ],
-"size": Vector2( 333, 85 ),
-"values": [  ]
-},
-"name": "task6",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
-"params": [  ],
-"size": Vector2( 333, 84.9995 ),
-"values": [  ]
-},
-"name": "task7",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_look_at_speed",
-"offset": Vector2( 1282.18, -626.283 ),
-"params": [  ],
-"size": Vector2( 333, 85 ),
-"values": [  ]
-},
-"name": "task4",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_speed",
-"offset": Vector2( 1282.18, -626.283 ),
-"params": [  ],
-"size": Vector2( 333, 85 ),
-"values": [  ]
-},
-"name": "task4",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
-"params": [  ],
-"size": Vector2( 332, 84.9998 ),
-"values": [  ]
-},
-"name": "task8",
-"type": 1
-} ],
-"data": {
-"fn": "task_is_died",
-"offset": Vector2( 1289.38, -283.057 ),
-"size": Vector2( 221, 55 )
-},
-"name": "while_node",
-"type": 9
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 1022.18, -466.283 ),
-"size": Vector2( 144, 109 )
-},
-"name": "sequence2",
-"type": 2
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_speed",
-"offset": Vector2( 1282.18, -626.283 ),
-"params": [  ],
-"size": Vector2( 333, 85 ),
-"values": [  ]
-},
-"name": "task4",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
-"params": [  ],
-"size": Vector2( 332, 84.9998 ),
-"values": [  ]
-},
-"name": "task8",
-"type": 1
-} ],
-"data": {
-"fn": "task_is_died",
-"offset": Vector2( 1289.38, -283.057 ),
-"size": Vector2( 221, 55 )
-},
-"name": "while_node",
-"type": 9
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 1022.18, -466.283 ),
-"size": Vector2( 144, 109 )
-},
-"name": "sequence2",
-"type": 2
-} ],
-"data": {
-"offset": Vector2( 786.773, -344.43 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute2",
-"type": 7
-}, {
-"child": [  ],
-"data": {
-"fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
-"params": [  ],
-"size": Vector2( 332, 84.9998 ),
-"values": [  ]
-},
-"name": "task8",
-"type": 1
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
-"params": [  ],
-"size": Vector2( 391, 84.9998 ),
-"values": [  ]
-},
-"name": "task5",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
-"params": [  ],
-"size": Vector2( 333, 85 ),
-"values": [  ]
-},
-"name": "task6",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
-"params": [  ],
-"size": Vector2( 333, 84.9995 ),
-"values": [  ]
-},
-"name": "task7",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence3",
-"type": 2
-} ],
-"data": {
-"fn": "task_is_not_player",
-"offset": Vector2( 1266.23, 581.688 ),
-"size": Vector2( 329, 55.0001 )
-},
-"name": "priority_condition2",
+"name": "priority_condition7",
 "type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
-"params": [  ],
-"size": Vector2( 332, 85 ),
-"values": [  ]
-},
-"name": "task12",
-"type": 1
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat3",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
-"size": Vector2( 143, 109 )
-},
-"name": "sequence5",
-"type": 2
-} ],
-"data": {
-"count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat4",
-"type": 8
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
-"size": Vector2( 101, 109 )
-},
-"name": "race",
-"type": 11
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "wait_node",
-"type": 10
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-} ],
-"data": {
-"offset": Vector2( 3180, 80 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute4",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat6",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-} ],
-"data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
-},
-"name": "mute3",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2920, 170 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "repeat5",
-"type": 8
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2730, 80 ),
-"size": Vector2( 110, 136 )
-},
-"name": "race2",
-"type": 11
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2390, 0 ),
-"size": Vector2( 144, 109 )
-},
-"name": "sequence4",
-"type": 2
-} ],
-"data": {
-"fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
-"size": Vector2( 348, 55.0001 )
-},
-"name": "priority_condition3",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
-"params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
-"values": [  ]
-},
-"name": "task2",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
-"params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
-"values": [  ]
-},
-"name": "task",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
-"params": [  ],
-"size": Vector2( 333, 84.9996 ),
-"values": [  ]
-},
-"name": "task3",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2310, 430 ),
-"size": Vector2( 135, 136 )
-},
-"name": "sequence",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
-},
-"name": "priority_condition4",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 1660, 170 ),
-"size": Vector2( 185, 109 )
-},
-"name": "priority_selector2",
-"type": 4
-} ],
-"data": {
-"fn": "task_is_player",
-"offset": Vector2( 1270, 370 ),
-"size": Vector2( 314.74, 55 )
-},
-"name": "priority_condition",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
-"params": [  ],
-"size": Vector2( 332, 85 ),
-"values": [  ]
-},
-"name": "task12",
-"type": 1
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat3",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
-"size": Vector2( 143, 109 )
-},
-"name": "sequence5",
-"type": 2
-} ],
-"data": {
-"count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat4",
-"type": 8
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
-"size": Vector2( 101, 109 )
-},
-"name": "race",
-"type": 11
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "wait_node",
-"type": 10
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-} ],
-"data": {
-"offset": Vector2( 3180, 80 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute4",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat6",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-} ],
-"data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
-},
-"name": "mute3",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2920, 170 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "repeat5",
-"type": 8
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2730, 80 ),
-"size": Vector2( 110, 136 )
-},
-"name": "race2",
-"type": 11
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2390, 0 ),
-"size": Vector2( 144, 109 )
-},
-"name": "sequence4",
-"type": 2
-} ],
-"data": {
-"fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
-"size": Vector2( 348, 55.0001 )
-},
-"name": "priority_condition3",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
-"params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
-"values": [  ]
-},
-"name": "task2",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
-"params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
-"values": [  ]
-},
-"name": "task",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
-"params": [  ],
-"size": Vector2( 333, 84.9996 ),
-"values": [  ]
-},
-"name": "task3",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2310, 430 ),
-"size": Vector2( 135, 136 )
-},
-"name": "sequence",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
-},
-"name": "priority_condition4",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 1660, 170 ),
-"size": Vector2( 185, 109 )
-},
-"name": "priority_selector2",
-"type": 4
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
-"params": [  ],
-"size": Vector2( 332, 85 ),
-"values": [  ]
-},
-"name": "task12",
-"type": 1
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat3",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
-"size": Vector2( 143, 109 )
-},
-"name": "sequence5",
-"type": 2
-} ],
-"data": {
-"count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat4",
-"type": 8
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
-"size": Vector2( 101, 109 )
-},
-"name": "race",
-"type": 11
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "wait_node",
-"type": 10
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-} ],
-"data": {
-"offset": Vector2( 3180, 80 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute4",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat6",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-} ],
-"data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
-},
-"name": "mute3",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2920, 170 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "repeat5",
-"type": 8
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2730, 80 ),
-"size": Vector2( 110, 136 )
-},
-"name": "race2",
-"type": 11
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2390, 0 ),
-"size": Vector2( 144, 109 )
-},
-"name": "sequence4",
-"type": 2
-} ],
-"data": {
-"fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
-"size": Vector2( 348, 55.0001 )
-},
-"name": "priority_condition3",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
-"params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
-"values": [  ]
-},
-"name": "task2",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
-"params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
-"values": [  ]
-},
-"name": "task",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
-"params": [  ],
-"size": Vector2( 333, 84.9996 ),
-"values": [  ]
-},
-"name": "task3",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2310, 430 ),
-"size": Vector2( 135, 136 )
-},
-"name": "sequence",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
-},
-"name": "priority_condition4",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
-"params": [  ],
-"size": Vector2( 332, 85 ),
-"values": [  ]
-},
-"name": "task12",
-"type": 1
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat3",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
-"size": Vector2( 143, 109 )
-},
-"name": "sequence5",
-"type": 2
-} ],
-"data": {
-"count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat4",
-"type": 8
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
-"size": Vector2( 101, 109 )
-},
-"name": "race",
-"type": 11
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "wait_node",
-"type": 10
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-} ],
-"data": {
-"offset": Vector2( 3180, 80 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute4",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat6",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-} ],
-"data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
-},
-"name": "mute3",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2920, 170 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "repeat5",
-"type": 8
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2730, 80 ),
-"size": Vector2( 110, 136 )
-},
-"name": "race2",
-"type": 11
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2390, 0 ),
-"size": Vector2( 144, 109 )
-},
-"name": "sequence4",
-"type": 2
-}, {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
-"params": [  ],
-"size": Vector2( 332, 85 ),
-"values": [  ]
-},
-"name": "task12",
-"type": 1
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat3",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
-"size": Vector2( 143, 109 )
-},
-"name": "sequence5",
-"type": 2
-} ],
-"data": {
-"count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat4",
-"type": 8
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
-"size": Vector2( 101, 109 )
-},
-"name": "race",
-"type": 11
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
-"params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
-"values": [  ]
-},
-"name": "task2",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
-"params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
-"values": [  ]
-},
-"name": "task",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
-"params": [  ],
-"size": Vector2( 333, 84.9996 ),
-"values": [  ]
-},
-"name": "task3",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2310, 430 ),
-"size": Vector2( 135, 136 )
-},
-"name": "sequence",
-"type": 2
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
-"size": Vector2( 143, 109 )
-},
-"name": "sequence5",
-"type": 2
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
-"params": [  ],
-"size": Vector2( 332, 84.9998 ),
-"values": [  ]
-},
-"name": "task8",
-"type": 1
-} ],
-"data": {
-"fn": "task_is_died",
-"offset": Vector2( 1289.38, -283.057 ),
-"size": Vector2( 221, 55 )
-},
-"name": "while_node",
-"type": 9
-}, {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
-"params": [  ],
-"size": Vector2( 332, 85 ),
-"values": [  ]
-},
-"name": "task12",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "wait_node",
-"type": 10
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-} ],
-"data": {
-"offset": Vector2( 3180, 80 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute4",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat6",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-} ],
-"data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
-},
-"name": "mute3",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2920, 170 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "repeat5",
-"type": 8
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 2730, 80 ),
-"size": Vector2( 110, 136 )
-},
-"name": "race2",
-"type": 11
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-}, {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-} ],
-"data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
-},
-"name": "mute3",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2920, 170 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "repeat5",
-"type": 8
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-}, {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
-"params": [  ],
-"size": Vector2( 313, 84.9998 ),
-"values": [  ]
-},
-"name": "task10",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
-"params": [  ],
-"size": Vector2( 305.001, 85 ),
-"values": [  ]
-},
-"name": "task14",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
-"size": Vector2( 143, 136 )
-},
-"name": "sequence6",
-"type": 2
-} ],
-"data": {
-"fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
-},
-"name": "priority_condition5",
-"type": 5
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
-"params": [  ],
-"size": Vector2( 313, 84.9999 ),
-"values": [  ]
-},
-"name": "task11",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task15",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
-"params": [  ],
-"size": Vector2( 305, 84.9998 ),
-"values": [  ]
-},
-"name": "task16",
-"type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
-"size": Vector2( 144, 136 )
-},
-"name": "sequence7",
-"type": 2
-} ],
-"data": {
-"fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
-},
-"name": "priority_condition6",
-"type": 5
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
-"size": Vector2( 184, 109 )
-},
-"name": "priority_selector3",
-"type": 4
-} ],
-"data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
-},
-"name": "mute3",
-"type": 7
-}, {
-"child": [  ],
-"data": {
-"count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "wait_node",
-"type": 10
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-} ],
-"data": {
-"offset": Vector2( 3180, 80 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute4",
-"type": 7
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat6",
-"type": 8
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-} ],
-"data": {
-"offset": Vector2( 3180, 80 ),
-"size": Vector2( 116, 55 )
-},
-"name": "mute4",
-"type": 7
-}, {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
-"params": [  ],
-"size": Vector2( 332, 84.9999 ),
-"values": [  ]
-},
-"name": "task17",
-"type": 1
-}, {
-"child": [ {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
-"params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
-"values": [ 2000 ]
-},
-"name": "task9",
-"type": 1
-}, {
-"child": [  ],
-"data": {
-"count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
-"size": Vector2( 194, 55.0001 )
-},
-"name": "wait_node2",
-"type": 10
-} ],
-"data": {
-"count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
-"size": Vector2( 143, 109 )
-},
-"name": "sequence5",
-"type": 2
-} ],
-"data": {
-"count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat4",
-"type": 8
-}, {
-"child": [ {
-"child": [  ],
-"data": {
-"fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
-"params": [  ],
-"size": Vector2( 332, 85 ),
-"values": [  ]
-},
-"name": "task12",
-"type": 1
-} ],
-"data": {
-"count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
-"size": Vector2( 194, 55 )
-},
-"name": "repeat3",
-"type": 8
-}, {
-"child": [  ],
-"data": {
-"fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
-"params": [  ],
-"size": Vector2( 333, 84.9999 ),
-"values": [  ]
-},
-"name": "task13",
-"type": 1
 } ],
 "root": {
 "child": [ {
@@ -5068,7 +5127,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_speed",
-"offset": Vector2( 1282.18, -626.283 ),
+"offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -5080,7 +5139,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_destroy",
-"offset": Vector2( 1617.75, -227.834 ),
+"offset": Vector2( 1627.4, -1037.27 ),
 "params": [  ],
 "size": Vector2( 332, 84.9998 ),
 "values": [  ]
@@ -5090,7 +5149,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_died",
-"offset": Vector2( 1289.38, -283.057 ),
+"offset": Vector2( 1299.03, -1092.5 ),
 "size": Vector2( 221, 55 )
 },
 "name": "while_node",
@@ -5098,14 +5157,14 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1022.18, -466.283 ),
+"offset": Vector2( 1031.83, -1275.72 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence2",
 "type": 2
 } ],
 "data": {
-"offset": Vector2( 786.773, -344.43 ),
+"offset": Vector2( 796.427, -1153.87 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute2",
@@ -5113,7 +5172,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 500, -310 ),
+"offset": Vector2( 509.654, -1119.44 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat2",
@@ -5122,6 +5181,15 @@ tree = {
 "child": [ {
 "child": [ {
 "child": [ {
+"child": [  ],
+"data": {
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1220, 110 ),
+"size": Vector2( 318, 55 )
+},
+"name": "priority_condition7",
+"type": 5
+}, {
 "child": [ {
 "child": [ {
 "child": [ {
@@ -5131,7 +5199,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3069.5, -594.096 ),
+"offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
 "size": Vector2( 332, 85 ),
 "values": [  ]
@@ -5141,7 +5209,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2823.61, -588.274 ),
+"offset": Vector2( 2871.8, -87.192 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat3",
@@ -5152,9 +5220,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_fire",
-"offset": Vector2( 3325.84, -322.892 ),
+"offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261, 109 ),
+"size": Vector2( 261.001, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -5163,7 +5231,7 @@ tree = {
 "child": [  ],
 "data": {
 "count": 10.0,
-"offset": Vector2( 3325.84, -192.892 ),
+"offset": Vector2( 3374.03, 308.19 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node2",
@@ -5171,7 +5239,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3086.2, -295.116 ),
+"offset": Vector2( 3134.39, 205.966 ),
 "size": Vector2( 143, 109 )
 },
 "name": "sequence5",
@@ -5179,7 +5247,7 @@ tree = {
 } ],
 "data": {
 "count": 5.0,
-"offset": Vector2( 2823.61, -335.986 ),
+"offset": Vector2( 2871.8, 165.096 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat4",
@@ -5187,7 +5255,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2674.11, -484.179 ),
+"offset": Vector2( 2722.3, 16.903 ),
 "size": Vector2( 101, 109 )
 },
 "name": "race",
@@ -5197,8 +5265,8 @@ tree = {
 "child": [  ],
 "data": {
 "count": 200.0,
-"offset": Vector2( 2930, -70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 431.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -5208,16 +5276,16 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_look_at_player",
-"offset": Vector2( 3380, 40 ),
+"offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332, 84.9999 ),
+"size": Vector2( 332.001, 85 ),
 "values": [  ]
 },
 "name": "task17",
 "type": 1
 } ],
 "data": {
-"offset": Vector2( 3180, 80 ),
+"offset": Vector2( 3228.19, 581.082 ),
 "size": Vector2( 116, 55 )
 },
 "name": "mute4",
@@ -5225,8 +5293,8 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2930, 70 ),
-"size": Vector2( 194, 55 )
+"offset": Vector2( 2978.19, 571.082 ),
+"size": Vector2( 194, 55.0001 )
 },
 "name": "repeat6",
 "type": 8
@@ -5239,9 +5307,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_right",
-"offset": Vector2( 4090, -70 ),
+"offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9998 ),
+"size": Vector2( 313, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -5250,9 +5318,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4090, 100 ),
+"offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 333, 84.9998 ),
 "values": [  ]
 },
 "name": "task13",
@@ -5261,9 +5329,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4085.44, 252.124 ),
+"offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 85 ),
+"size": Vector2( 305.001, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -5271,7 +5339,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3865.44, 92.1241 ),
+"offset": Vector2( 3913.63, 593.206 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence6",
@@ -5279,8 +5347,8 @@ tree = {
 } ],
 "data": {
 "fn": "task_prob",
-"offset": Vector2( 3495.44, 182.124 ),
-"size": Vector2( 266, 55.0001 )
+"offset": Vector2( 3543.63, 683.206 ),
+"size": Vector2( 266.001, 55.0002 )
 },
 "name": "priority_condition5",
 "type": 5
@@ -5290,7 +5358,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_strafe_left",
-"offset": Vector2( 4123.95, 406.56 ),
+"offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
 "size": Vector2( 313, 84.9999 ),
 "values": [  ]
@@ -5301,7 +5369,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 4123.95, 526.56 ),
+"offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
 "size": Vector2( 333, 84.9999 ),
 "values": [  ]
@@ -5312,9 +5380,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 4123.95, 626.56 ),
+"offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9998 ),
+"size": Vector2( 305, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -5322,7 +5390,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 3909.93, 470.069 ),
+"offset": Vector2( 3958.12, 971.151 ),
 "size": Vector2( 144, 136 )
 },
 "name": "sequence7",
@@ -5330,30 +5398,30 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 3505.44, 372.124 ),
-"size": Vector2( 300.927, 55.0002 )
+"offset": Vector2( 3553.63, 873.206 ),
+"size": Vector2( 300.927, 55.0003 )
 },
 "name": "priority_condition6",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 3285.44, 222.124 ),
+"offset": Vector2( 3333.63, 723.206 ),
 "size": Vector2( 184, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 3140, 220 ),
-"size": Vector2( 115, 55.0002 )
+"offset": Vector2( 3188.19, 721.082 ),
+"size": Vector2( 115, 55.0001 )
 },
 "name": "mute3",
 "type": 7
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 2920, 170 ),
+"offset": Vector2( 2968.19, 671.082 ),
 "size": Vector2( 194, 55.0001 )
 },
 "name": "repeat5",
@@ -5361,7 +5429,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2730, 80 ),
+"offset": Vector2( 2778.19, 581.082 ),
 "size": Vector2( 110, 136 )
 },
 "name": "race2",
@@ -5369,7 +5437,7 @@ tree = {
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 2390, 0 ),
+"offset": Vector2( 2438.19, 501.082 ),
 "size": Vector2( 144, 109 )
 },
 "name": "sequence4",
@@ -5377,7 +5445,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_can_shoot_player",
-"offset": Vector2( 1900, 60 ),
+"offset": Vector2( 1948.19, 561.082 ),
 "size": Vector2( 348, 55.0001 )
 },
 "name": "priority_condition3",
@@ -5388,9 +5456,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_save_hide",
-"offset": Vector2( 2590, 340 ),
+"offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0002 ),
+"size": Vector2( 391.001, 85.0001 ),
 "values": [  ]
 },
 "name": "task2",
@@ -5399,7 +5467,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 2590, 480 ),
+"offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
 "size": Vector2( 333.001, 85.0001 ),
 "values": [  ]
@@ -5410,9 +5478,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 2600, 620 ),
+"offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333, 84.9996 ),
+"size": Vector2( 333.001, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -5420,7 +5488,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 2310, 430 ),
+"offset": Vector2( 2358.19, 931.082 ),
 "size": Vector2( 135, 136 )
 },
 "name": "sequence",
@@ -5428,15 +5496,15 @@ tree = {
 } ],
 "data": {
 "fn": "task_succeed",
-"offset": Vector2( 1903.85, 296.253 ),
-"size": Vector2( 289, 55.0002 )
+"offset": Vector2( 1952.04, 797.335 ),
+"size": Vector2( 289, 55.0001 )
 },
 "name": "priority_condition4",
 "type": 5
 } ],
 "data": {
 "count": 2,
-"offset": Vector2( 1660, 170 ),
+"offset": Vector2( 1708.19, 671.082 ),
 "size": Vector2( 185, 109 )
 },
 "name": "priority_selector2",
@@ -5444,7 +5512,7 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_player",
-"offset": Vector2( 1270, 370 ),
+"offset": Vector2( 1318.19, 871.082 ),
 "size": Vector2( 314.74, 55 )
 },
 "name": "priority_condition",
@@ -5455,9 +5523,9 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_pick_random_hide",
-"offset": Vector2( 1991.75, 639.836 ),
+"offset": Vector2( 2024.15, 1717.15 ),
 "params": [  ],
-"size": Vector2( 391, 84.9998 ),
+"size": Vector2( 391, 84.9996 ),
 "values": [  ]
 },
 "name": "task5",
@@ -5466,7 +5534,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_compute_path",
-"offset": Vector2( 1991.75, 779.836 ),
+"offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
 "size": Vector2( 333, 85 ),
 "values": [  ]
@@ -5477,7 +5545,7 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_run_curve",
-"offset": Vector2( 1991.75, 909.836 ),
+"offset": Vector2( 2024.15, 1987.15 ),
 "params": [  ],
 "size": Vector2( 333, 84.9995 ),
 "values": [  ]
@@ -5487,7 +5555,7 @@ tree = {
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1721.75, 709.836 ),
+"offset": Vector2( 1754.15, 1787.15 ),
 "size": Vector2( 143, 136 )
 },
 "name": "sequence3",
@@ -5495,22 +5563,22 @@ tree = {
 } ],
 "data": {
 "fn": "task_is_not_player",
-"offset": Vector2( 1266.23, 581.688 ),
-"size": Vector2( 329, 55.0001 )
+"offset": Vector2( 1298.63, 1659 ),
+"size": Vector2( 329, 55 )
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
-"count": 2,
-"offset": Vector2( 980, 390 ),
-"size": Vector2( 179.414, 109 )
+"count": 3,
+"offset": Vector2( 1020, 790 ),
+"size": Vector2( 179.414, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
-"offset": Vector2( 750, 360 ),
+"offset": Vector2( 775.196, 786.63 ),
 "size": Vector2( 107, 55.0001 )
 },
 "name": "mute",
@@ -5518,7 +5586,7 @@ tree = {
 } ],
 "data": {
 "count": 0.0,
-"offset": Vector2( 475.818, 287.338 ),
+"offset": Vector2( 501.014, 713.968 ),
 "size": Vector2( 194, 55 )
 },
 "name": "repeat",
