@@ -1,7 +1,9 @@
 tool
 extends GraphNode
 
-const type = 10
+const Runtime = preload("res://addons/btree/Runtime/runtime.gd")
+
+const type = Runtime.TNodeTypes.WAIT
 
 func _ready():
 	$slot0/count.value = 0

@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 global="*res://global.gd"
+BTDebugServer="*res://addons/btree/script/bt_debug_server.gd"
 
 [editor_plugins]
 

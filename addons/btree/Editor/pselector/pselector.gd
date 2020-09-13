@@ -1,7 +1,9 @@
 tool
 extends GraphNode
 
-const type = 4
+const Runtime = preload("res://addons/btree/Runtime/runtime.gd")
+
+const type = Runtime.TNodeTypes.PRIORITY_SELECTOR
 
 func _on_Add_pressed():
 	add_child(label())

@@ -17,14 +17,14 @@ animations = [ {
 "name": "reload",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "gun",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "stand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "gun",
 "speed": 5.0
 } ]
 
@@ -304,7 +304,7 @@ tree = {
 "fn": "task_look_at_speed",
 "offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 336, 85 ),
 "values": [  ]
 },
 "name": "task4",
@@ -325,7 +325,9 @@ tree = {
 "data": {
 "fn": "task_is_died",
 "offset": Vector2( 1299.03, -1092.5 ),
-"size": Vector2( 221, 55 )
+"params": [  ],
+"size": Vector2( 290, 83 ),
+"values": [  ]
 },
 "name": "while_node",
 "type": 9
@@ -333,7 +335,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1031.83, -1275.72 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence2",
 "type": 2
@@ -348,7 +350,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 509.654, -1119.44 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat2",
 "type": 8
@@ -359,8 +361,10 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_is_not_so_ok",
-"offset": Vector2( 1220, 110 ),
-"size": Vector2( 318, 55 )
+"offset": Vector2( 1360, 300 ),
+"params": [  ],
+"size": Vector2( 324, 85 ),
+"values": [  ]
 },
 "name": "priority_condition7",
 "type": 5
@@ -376,7 +380,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -385,7 +389,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -397,7 +401,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -407,7 +411,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -415,7 +419,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -423,7 +427,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -431,7 +435,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -441,7 +445,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -453,7 +457,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -469,7 +473,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -484,7 +488,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -495,7 +499,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -506,7 +510,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -515,7 +519,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -523,7 +527,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -535,7 +541,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -546,7 +552,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -557,7 +563,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -566,7 +572,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -574,7 +580,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -582,14 +590,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -597,7 +605,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -613,7 +621,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -621,7 +629,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -633,7 +643,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -644,7 +654,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -655,7 +665,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -664,15 +674,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -680,7 +692,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -688,7 +700,9 @@ tree = {
 "data": {
 "fn": "task_is_player",
 "offset": Vector2( 1318.19, 871.082 ),
-"size": Vector2( 314.74, 55 )
+"params": [  ],
+"size": Vector2( 314.74, 83 ),
+"values": [  ]
 },
 "name": "priority_condition",
 "type": 5
@@ -711,7 +725,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -731,7 +745,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -739,22 +753,24 @@ tree = {
 "data": {
 "fn": "task_is_not_player",
 "offset": Vector2( 1298.63, 1659 ),
-"size": Vector2( 329, 55 )
+"params": [  ],
+"size": Vector2( 330, 83 ),
+"values": [  ]
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1020, 790 ),
-"size": Vector2( 179.414, 136 )
+"offset": Vector2( 1020, 740 ),
+"size": Vector2( 181, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 775.196, 786.63 ),
-"size": Vector2( 107, 55.0001 )
+"size": Vector2( 108, 55.0001 )
 },
 "name": "mute",
 "type": 7
@@ -762,7 +778,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 501.014, 713.968 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat",
 "type": 8
@@ -770,14 +786,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 280, 20 ),
-"size": Vector2( 119, 109 )
+"size": Vector2( 124, 109 )
 },
 "name": "parallel",
 "type": 6
 } ],
 "data": {
 "offset": Vector2( 0, 0 ),
-"size": Vector2( 96, 82 )
+"size": Vector2( 96, 81.9995 )
 },
 "name": "root",
 "type": 0
@@ -787,7 +803,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -798,7 +814,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -813,7 +829,7 @@ tree = {
 "fn": "task_look_at_speed",
 "offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 336, 85 ),
 "values": [  ]
 },
 "name": "task4",
@@ -834,7 +850,9 @@ tree = {
 "data": {
 "fn": "task_is_died",
 "offset": Vector2( 1299.03, -1092.5 ),
-"size": Vector2( 221, 55 )
+"params": [  ],
+"size": Vector2( 290, 83 ),
+"values": [  ]
 },
 "name": "while_node",
 "type": 9
@@ -842,7 +860,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1031.83, -1275.72 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence2",
 "type": 2
@@ -857,7 +875,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 509.654, -1119.44 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat2",
 "type": 8
@@ -868,8 +886,10 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_is_not_so_ok",
-"offset": Vector2( 1220, 110 ),
-"size": Vector2( 318, 55 )
+"offset": Vector2( 1360, 300 ),
+"params": [  ],
+"size": Vector2( 324, 85 ),
+"values": [  ]
 },
 "name": "priority_condition7",
 "type": 5
@@ -885,7 +905,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -894,7 +914,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -906,7 +926,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -916,7 +936,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -924,7 +944,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -932,7 +952,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -940,7 +960,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -950,7 +970,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -962,7 +982,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -978,7 +998,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -993,7 +1013,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -1004,7 +1024,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -1015,7 +1035,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -1024,7 +1044,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -1032,7 +1052,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -1044,7 +1066,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -1055,7 +1077,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -1066,7 +1088,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -1075,7 +1097,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -1083,7 +1105,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -1091,14 +1115,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -1106,7 +1130,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -1122,7 +1146,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -1130,7 +1154,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -1142,7 +1168,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -1153,7 +1179,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -1164,7 +1190,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -1173,15 +1199,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -1189,7 +1217,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -1197,7 +1225,9 @@ tree = {
 "data": {
 "fn": "task_is_player",
 "offset": Vector2( 1318.19, 871.082 ),
-"size": Vector2( 314.74, 55 )
+"params": [  ],
+"size": Vector2( 314.74, 83 ),
+"values": [  ]
 },
 "name": "priority_condition",
 "type": 5
@@ -1220,7 +1250,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -1240,7 +1270,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -1248,22 +1278,24 @@ tree = {
 "data": {
 "fn": "task_is_not_player",
 "offset": Vector2( 1298.63, 1659 ),
-"size": Vector2( 329, 55 )
+"params": [  ],
+"size": Vector2( 330, 83 ),
+"values": [  ]
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1020, 790 ),
-"size": Vector2( 179.414, 136 )
+"offset": Vector2( 1020, 740 ),
+"size": Vector2( 181, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 775.196, 786.63 ),
-"size": Vector2( 107, 55.0001 )
+"size": Vector2( 108, 55.0001 )
 },
 "name": "mute",
 "type": 7
@@ -1271,7 +1303,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 501.014, 713.968 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat",
 "type": 8
@@ -1279,7 +1311,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 280, 20 ),
-"size": Vector2( 119, 109 )
+"size": Vector2( 124, 109 )
 },
 "name": "parallel",
 "type": 6
@@ -1289,8 +1321,10 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_is_not_so_ok",
-"offset": Vector2( 1220, 110 ),
-"size": Vector2( 318, 55 )
+"offset": Vector2( 1360, 300 ),
+"params": [  ],
+"size": Vector2( 324, 85 ),
+"values": [  ]
 },
 "name": "priority_condition7",
 "type": 5
@@ -1306,7 +1340,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -1315,7 +1349,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -1327,7 +1361,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -1337,7 +1371,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -1345,7 +1379,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -1353,7 +1387,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -1361,7 +1395,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -1371,7 +1405,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -1383,7 +1417,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -1399,7 +1433,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -1414,7 +1448,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -1425,7 +1459,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -1436,7 +1470,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -1445,7 +1479,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -1453,7 +1487,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -1465,7 +1501,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -1476,7 +1512,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -1487,7 +1523,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -1496,7 +1532,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -1504,7 +1540,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -1512,14 +1550,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -1527,7 +1565,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -1543,7 +1581,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -1551,7 +1589,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -1563,7 +1603,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -1574,7 +1614,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -1585,7 +1625,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -1594,15 +1634,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -1610,7 +1652,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -1618,7 +1660,9 @@ tree = {
 "data": {
 "fn": "task_is_player",
 "offset": Vector2( 1318.19, 871.082 ),
-"size": Vector2( 314.74, 55 )
+"params": [  ],
+"size": Vector2( 314.74, 83 ),
+"values": [  ]
 },
 "name": "priority_condition",
 "type": 5
@@ -1641,7 +1685,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -1661,7 +1705,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -1669,22 +1713,24 @@ tree = {
 "data": {
 "fn": "task_is_not_player",
 "offset": Vector2( 1298.63, 1659 ),
-"size": Vector2( 329, 55 )
+"params": [  ],
+"size": Vector2( 330, 83 ),
+"values": [  ]
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1020, 790 ),
-"size": Vector2( 179.414, 136 )
+"offset": Vector2( 1020, 740 ),
+"size": Vector2( 181, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 775.196, 786.63 ),
-"size": Vector2( 107, 55.0001 )
+"size": Vector2( 108, 55.0001 )
 },
 "name": "mute",
 "type": 7
@@ -1694,7 +1740,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -1728,7 +1774,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -1748,7 +1794,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -1758,7 +1804,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -1780,7 +1826,7 @@ tree = {
 "fn": "task_look_at_speed",
 "offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 336, 85 ),
 "values": [  ]
 },
 "name": "task4",
@@ -1792,7 +1838,7 @@ tree = {
 "fn": "task_look_at_speed",
 "offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 336, 85 ),
 "values": [  ]
 },
 "name": "task4",
@@ -1813,7 +1859,9 @@ tree = {
 "data": {
 "fn": "task_is_died",
 "offset": Vector2( 1299.03, -1092.5 ),
-"size": Vector2( 221, 55 )
+"params": [  ],
+"size": Vector2( 290, 83 ),
+"values": [  ]
 },
 "name": "while_node",
 "type": 9
@@ -1821,7 +1869,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1031.83, -1275.72 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence2",
 "type": 2
@@ -1833,7 +1881,7 @@ tree = {
 "fn": "task_look_at_speed",
 "offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 336, 85 ),
 "values": [  ]
 },
 "name": "task4",
@@ -1854,7 +1902,9 @@ tree = {
 "data": {
 "fn": "task_is_died",
 "offset": Vector2( 1299.03, -1092.5 ),
-"size": Vector2( 221, 55 )
+"params": [  ],
+"size": Vector2( 290, 83 ),
+"values": [  ]
 },
 "name": "while_node",
 "type": 9
@@ -1862,7 +1912,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1031.83, -1275.72 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence2",
 "type": 2
@@ -1895,7 +1945,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -1904,7 +1954,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -1916,7 +1966,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -1926,7 +1976,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -1934,7 +1984,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -1942,7 +1992,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -1950,7 +2000,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -1960,7 +2010,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -1972,7 +2022,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -1988,7 +2038,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -2003,7 +2053,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -2014,7 +2064,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -2025,7 +2075,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -2034,7 +2084,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -2042,7 +2092,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -2054,7 +2106,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -2065,7 +2117,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -2076,7 +2128,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -2085,7 +2137,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -2093,7 +2145,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -2101,14 +2155,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -2116,7 +2170,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -2132,7 +2186,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -2140,7 +2194,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -2152,7 +2208,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -2163,7 +2219,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -2174,7 +2230,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -2183,15 +2239,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -2199,7 +2257,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -2213,7 +2271,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -2222,7 +2280,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -2234,7 +2292,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -2244,7 +2302,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -2252,7 +2310,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -2260,7 +2318,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -2268,7 +2326,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -2278,7 +2336,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -2290,7 +2348,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -2306,7 +2364,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -2321,7 +2379,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -2332,7 +2390,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -2343,7 +2401,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -2352,7 +2410,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -2360,7 +2418,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -2372,7 +2432,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -2383,7 +2443,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -2394,7 +2454,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -2403,7 +2463,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -2411,7 +2471,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -2419,14 +2481,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -2434,7 +2496,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -2450,7 +2512,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -2458,7 +2520,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -2470,7 +2534,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -2481,7 +2545,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -2492,7 +2556,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -2501,15 +2565,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -2522,7 +2588,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -2531,7 +2597,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -2543,7 +2609,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -2553,7 +2619,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -2561,7 +2627,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -2569,7 +2635,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -2577,7 +2643,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -2587,7 +2653,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -2599,7 +2665,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -2615,7 +2681,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -2630,7 +2696,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -2641,7 +2707,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -2652,7 +2718,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -2661,7 +2727,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -2669,7 +2735,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -2681,7 +2749,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -2692,7 +2760,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -2703,7 +2771,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -2712,7 +2780,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -2720,7 +2788,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -2728,14 +2798,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -2743,7 +2813,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -2759,7 +2829,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -2769,7 +2839,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -2779,7 +2849,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -2791,7 +2861,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -2800,7 +2870,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -2812,7 +2882,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -2822,7 +2892,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -2830,7 +2900,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -2838,7 +2908,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -2846,7 +2916,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -2857,7 +2927,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -2868,7 +2938,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -2879,7 +2949,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -2888,7 +2958,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
@@ -2899,7 +2969,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -2909,7 +2979,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -2917,7 +2987,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -2937,7 +3007,9 @@ tree = {
 "data": {
 "fn": "task_is_died",
 "offset": Vector2( 1299.03, -1092.5 ),
-"size": Vector2( 221, 55 )
+"params": [  ],
+"size": Vector2( 290, 83 ),
+"values": [  ]
 },
 "name": "while_node",
 "type": 9
@@ -2947,7 +3019,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -2958,7 +3030,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -2970,7 +3042,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -2986,7 +3058,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -3001,7 +3073,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -3012,7 +3084,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -3023,7 +3095,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -3032,7 +3104,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -3040,7 +3112,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -3052,7 +3126,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -3063,7 +3137,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -3074,7 +3148,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -3083,7 +3157,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -3091,7 +3165,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -3099,14 +3175,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -3114,7 +3190,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -3134,7 +3210,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -3145,7 +3221,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -3156,7 +3232,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -3165,7 +3241,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -3173,7 +3249,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -3183,7 +3261,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -3195,7 +3273,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -3206,7 +3284,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -3217,7 +3295,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -3226,7 +3304,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -3236,7 +3314,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -3247,7 +3325,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -3258,7 +3336,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -3270,7 +3348,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -3281,7 +3359,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -3292,7 +3370,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -3301,7 +3379,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -3313,7 +3391,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -3324,7 +3402,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -3335,7 +3413,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -3344,7 +3422,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -3352,7 +3430,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -3367,7 +3447,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -3378,7 +3458,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -3389,7 +3469,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -3398,7 +3478,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -3406,7 +3486,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -3418,7 +3500,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -3429,7 +3511,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -3440,7 +3522,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -3449,7 +3531,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -3457,7 +3539,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -3465,14 +3549,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -3480,7 +3564,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -3493,7 +3577,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -3504,7 +3588,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -3515,7 +3599,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -3524,7 +3608,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -3532,7 +3616,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -3544,7 +3630,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -3555,7 +3641,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -3566,7 +3652,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -3575,7 +3661,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -3583,7 +3669,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -3591,7 +3679,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
@@ -3601,7 +3689,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -3616,7 +3704,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -3627,7 +3715,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -3638,7 +3726,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -3647,7 +3735,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -3655,7 +3743,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -3667,7 +3757,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -3678,7 +3768,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -3689,7 +3779,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -3698,7 +3788,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -3706,7 +3796,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -3714,14 +3806,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -3730,7 +3822,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -3742,7 +3834,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -3758,7 +3850,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -3769,7 +3861,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -3787,7 +3879,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -3800,7 +3892,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -3810,7 +3902,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -3818,7 +3910,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -3826,7 +3918,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -3837,7 +3929,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -3846,7 +3938,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -3856,7 +3948,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -3880,7 +3972,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -3900,7 +3992,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -3908,7 +4000,9 @@ tree = {
 "data": {
 "fn": "task_is_not_player",
 "offset": Vector2( 1298.63, 1659 ),
-"size": Vector2( 329, 55 )
+"params": [  ],
+"size": Vector2( 330, 83 ),
+"values": [  ]
 },
 "name": "priority_condition2",
 "type": 5
@@ -3921,7 +4015,7 @@ tree = {
 "fn": "task_look_at_speed",
 "offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 336, 85 ),
 "values": [  ]
 },
 "name": "task4",
@@ -3942,7 +4036,9 @@ tree = {
 "data": {
 "fn": "task_is_died",
 "offset": Vector2( 1299.03, -1092.5 ),
-"size": Vector2( 221, 55 )
+"params": [  ],
+"size": Vector2( 290, 83 ),
+"values": [  ]
 },
 "name": "while_node",
 "type": 9
@@ -3950,7 +4046,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1031.83, -1275.72 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence2",
 "type": 2
@@ -3965,7 +4061,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 509.654, -1119.44 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat2",
 "type": 8
@@ -3976,8 +4072,10 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_is_not_so_ok",
-"offset": Vector2( 1220, 110 ),
-"size": Vector2( 318, 55 )
+"offset": Vector2( 1360, 300 ),
+"params": [  ],
+"size": Vector2( 324, 85 ),
+"values": [  ]
 },
 "name": "priority_condition7",
 "type": 5
@@ -3993,7 +4091,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -4002,7 +4100,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -4014,7 +4112,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -4024,7 +4122,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -4032,7 +4130,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -4040,7 +4138,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -4048,7 +4146,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -4058,7 +4156,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -4070,7 +4168,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -4086,7 +4184,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -4101,7 +4199,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -4112,7 +4210,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -4123,7 +4221,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -4132,7 +4230,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -4140,7 +4238,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -4152,7 +4252,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -4163,7 +4263,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -4174,7 +4274,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -4183,7 +4283,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -4191,7 +4291,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -4199,14 +4301,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -4214,7 +4316,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -4230,7 +4332,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -4238,7 +4340,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -4250,7 +4354,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -4261,7 +4365,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -4272,7 +4376,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -4281,15 +4385,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -4297,7 +4403,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -4305,7 +4411,9 @@ tree = {
 "data": {
 "fn": "task_is_player",
 "offset": Vector2( 1318.19, 871.082 ),
-"size": Vector2( 314.74, 55 )
+"params": [  ],
+"size": Vector2( 314.74, 83 ),
+"values": [  ]
 },
 "name": "priority_condition",
 "type": 5
@@ -4328,7 +4436,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -4348,7 +4456,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -4356,22 +4464,24 @@ tree = {
 "data": {
 "fn": "task_is_not_player",
 "offset": Vector2( 1298.63, 1659 ),
-"size": Vector2( 329, 55 )
+"params": [  ],
+"size": Vector2( 330, 83 ),
+"values": [  ]
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1020, 790 ),
-"size": Vector2( 179.414, 136 )
+"offset": Vector2( 1020, 740 ),
+"size": Vector2( 181, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 775.196, 786.63 ),
-"size": Vector2( 107, 55.0001 )
+"size": Vector2( 108, 55.0001 )
 },
 "name": "mute",
 "type": 7
@@ -4379,7 +4489,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 501.014, 713.968 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat",
 "type": 8
@@ -4395,7 +4505,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -4404,7 +4514,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -4416,7 +4526,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -4426,7 +4536,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -4434,7 +4544,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -4442,7 +4552,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -4450,7 +4560,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -4460,7 +4570,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -4472,7 +4582,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -4488,7 +4598,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -4503,7 +4613,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -4514,7 +4624,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -4525,7 +4635,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -4534,7 +4644,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -4542,7 +4652,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -4554,7 +4666,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -4565,7 +4677,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -4576,7 +4688,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -4585,7 +4697,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -4593,7 +4705,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -4601,14 +4715,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -4616,7 +4730,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -4632,7 +4746,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -4640,7 +4754,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -4652,7 +4768,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -4663,7 +4779,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -4674,7 +4790,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -4683,15 +4799,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -4699,7 +4817,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -4707,17 +4825,32 @@ tree = {
 "data": {
 "fn": "task_is_player",
 "offset": Vector2( 1318.19, 871.082 ),
-"size": Vector2( 314.74, 55 )
+"params": [  ],
+"size": Vector2( 314.74, 83 ),
+"values": [  ]
 },
 "name": "priority_condition",
+"type": 5
+}, {
+"child": [  ],
+"data": {
+"fn": "task_is_not_so_ok",
+"offset": Vector2( 1360, 300 ),
+"params": [  ],
+"size": Vector2( 324, 85 ),
+"values": [  ]
+},
+"name": "priority_condition7",
 "type": 5
 }, {
 "child": [ {
 "child": [  ],
 "data": {
 "fn": "task_is_not_so_ok",
-"offset": Vector2( 1220, 110 ),
-"size": Vector2( 318, 55 )
+"offset": Vector2( 1360, 300 ),
+"params": [  ],
+"size": Vector2( 324, 85 ),
+"values": [  ]
 },
 "name": "priority_condition7",
 "type": 5
@@ -4733,7 +4866,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -4742,7 +4875,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -4754,7 +4887,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -4764,7 +4897,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -4772,7 +4905,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -4780,7 +4913,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -4788,7 +4921,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -4798,7 +4931,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -4810,7 +4943,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -4826,7 +4959,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -4841,7 +4974,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -4852,7 +4985,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -4863,7 +4996,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -4872,7 +5005,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -4880,7 +5013,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -4892,7 +5027,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -4903,7 +5038,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -4914,7 +5049,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -4923,7 +5058,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -4931,7 +5066,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -4939,14 +5076,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -4954,7 +5091,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -4970,7 +5107,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -4978,7 +5115,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -4990,7 +5129,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -5001,7 +5140,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -5012,7 +5151,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -5021,15 +5160,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -5037,7 +5178,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -5045,7 +5186,9 @@ tree = {
 "data": {
 "fn": "task_is_player",
 "offset": Vector2( 1318.19, 871.082 ),
-"size": Vector2( 314.74, 55 )
+"params": [  ],
+"size": Vector2( 314.74, 83 ),
+"values": [  ]
 },
 "name": "priority_condition",
 "type": 5
@@ -5068,7 +5211,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -5088,7 +5231,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -5096,27 +5239,20 @@ tree = {
 "data": {
 "fn": "task_is_not_player",
 "offset": Vector2( 1298.63, 1659 ),
-"size": Vector2( 329, 55 )
+"params": [  ],
+"size": Vector2( 330, 83 ),
+"values": [  ]
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1020, 790 ),
-"size": Vector2( 179.414, 136 )
+"offset": Vector2( 1020, 740 ),
+"size": Vector2( 181, 136 )
 },
 "name": "priority_selector",
 "type": 4
-}, {
-"child": [  ],
-"data": {
-"fn": "task_is_not_so_ok",
-"offset": Vector2( 1220, 110 ),
-"size": Vector2( 318, 55 )
-},
-"name": "priority_condition7",
-"type": 5
 } ],
 "root": {
 "child": [ {
@@ -5129,7 +5265,7 @@ tree = {
 "fn": "task_look_at_speed",
 "offset": Vector2( 1291.83, -1435.72 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 336, 85 ),
 "values": [  ]
 },
 "name": "task4",
@@ -5150,7 +5286,9 @@ tree = {
 "data": {
 "fn": "task_is_died",
 "offset": Vector2( 1299.03, -1092.5 ),
-"size": Vector2( 221, 55 )
+"params": [  ],
+"size": Vector2( 290, 83 ),
+"values": [  ]
 },
 "name": "while_node",
 "type": 9
@@ -5158,7 +5296,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1031.83, -1275.72 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence2",
 "type": 2
@@ -5173,7 +5311,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 509.654, -1119.44 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat2",
 "type": 8
@@ -5184,8 +5322,10 @@ tree = {
 "child": [  ],
 "data": {
 "fn": "task_is_not_so_ok",
-"offset": Vector2( 1220, 110 ),
-"size": Vector2( 318, 55 )
+"offset": Vector2( 1360, 300 ),
+"params": [  ],
+"size": Vector2( 324, 85 ),
+"values": [  ]
 },
 "name": "priority_condition7",
 "type": 5
@@ -5201,7 +5341,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3117.69, -93.014 ),
 "params": [  ],
-"size": Vector2( 332, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task12",
@@ -5210,7 +5350,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2871.8, -87.192 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat3",
 "type": 8
@@ -5222,7 +5362,7 @@ tree = {
 "fn": "task_fire",
 "offset": Vector2( 3374.03, 178.19 ),
 "params": [ [ 2000, 0 ] ],
-"size": Vector2( 261.001, 109 ),
+"size": Vector2( 266, 109 ),
 "values": [ 2000 ]
 },
 "name": "task9",
@@ -5232,7 +5372,7 @@ tree = {
 "data": {
 "count": 10.0,
 "offset": Vector2( 3374.03, 308.19 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "wait_node2",
 "type": 10
@@ -5240,7 +5380,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3134.39, 205.966 ),
-"size": Vector2( 143, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence5",
 "type": 2
@@ -5248,7 +5388,7 @@ tree = {
 "data": {
 "count": 5.0,
 "offset": Vector2( 2871.8, 165.096 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat4",
 "type": 8
@@ -5256,7 +5396,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2722.3, 16.903 ),
-"size": Vector2( 101, 109 )
+"size": Vector2( 102, 109 )
 },
 "name": "race",
 "type": 11
@@ -5266,7 +5406,7 @@ tree = {
 "data": {
 "count": 200.0,
 "offset": Vector2( 2978.19, 431.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0001 )
 },
 "name": "wait_node",
 "type": 10
@@ -5278,7 +5418,7 @@ tree = {
 "fn": "task_look_at_player",
 "offset": Vector2( 3428.19, 541.082 ),
 "params": [  ],
-"size": Vector2( 332.001, 85 ),
+"size": Vector2( 337, 85 ),
 "values": [  ]
 },
 "name": "task17",
@@ -5294,7 +5434,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2978.19, 571.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55.0002 )
 },
 "name": "repeat6",
 "type": 8
@@ -5309,7 +5449,7 @@ tree = {
 "fn": "task_strafe_right",
 "offset": Vector2( 4138.19, 431.082 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 321, 84.9999 ),
 "values": [  ]
 },
 "name": "task10",
@@ -5320,7 +5460,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4138.19, 601.082 ),
 "params": [  ],
-"size": Vector2( 333, 84.9998 ),
+"size": Vector2( 339, 84.9999 ),
 "values": [  ]
 },
 "name": "task13",
@@ -5331,7 +5471,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4133.63, 753.206 ),
 "params": [  ],
-"size": Vector2( 305.001, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task14",
@@ -5340,7 +5480,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3913.63, 593.206 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence6",
 "type": 2
@@ -5348,7 +5488,9 @@ tree = {
 "data": {
 "fn": "task_prob",
 "offset": Vector2( 3543.63, 683.206 ),
-"size": Vector2( 266.001, 55.0002 )
+"params": [  ],
+"size": Vector2( 275, 83 ),
+"values": [  ]
 },
 "name": "priority_condition5",
 "type": 5
@@ -5360,7 +5502,7 @@ tree = {
 "fn": "task_strafe_left",
 "offset": Vector2( 4172.14, 907.642 ),
 "params": [  ],
-"size": Vector2( 313, 84.9999 ),
+"size": Vector2( 313, 84.9998 ),
 "values": [  ]
 },
 "name": "task11",
@@ -5371,7 +5513,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 4172.14, 1027.64 ),
 "params": [  ],
-"size": Vector2( 333, 84.9999 ),
+"size": Vector2( 339, 84.9998 ),
 "values": [  ]
 },
 "name": "task15",
@@ -5382,7 +5524,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 4172.14, 1127.64 ),
 "params": [  ],
-"size": Vector2( 305, 84.9999 ),
+"size": Vector2( 310, 84.9999 ),
 "values": [  ]
 },
 "name": "task16",
@@ -5391,7 +5533,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 3958.12, 971.151 ),
-"size": Vector2( 144, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence7",
 "type": 2
@@ -5399,7 +5541,9 @@ tree = {
 "data": {
 "fn": "task_succeed",
 "offset": Vector2( 3553.63, 873.206 ),
-"size": Vector2( 300.927, 55.0003 )
+"params": [  ],
+"size": Vector2( 300.927, 83 ),
+"values": [  ]
 },
 "name": "priority_condition6",
 "type": 5
@@ -5407,14 +5551,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 3333.63, 723.206 ),
-"size": Vector2( 184, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector3",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 3188.19, 721.082 ),
-"size": Vector2( 115, 55.0001 )
+"size": Vector2( 116, 55 )
 },
 "name": "mute3",
 "type": 7
@@ -5422,7 +5566,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 2968.19, 671.082 ),
-"size": Vector2( 194, 55.0001 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat5",
 "type": 8
@@ -5438,7 +5582,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 2438.19, 501.082 ),
-"size": Vector2( 144, 109 )
+"size": Vector2( 146, 109 )
 },
 "name": "sequence4",
 "type": 2
@@ -5446,7 +5590,9 @@ tree = {
 "data": {
 "fn": "task_can_shoot_player",
 "offset": Vector2( 1948.19, 561.082 ),
-"size": Vector2( 348, 55.0001 )
+"params": [  ],
+"size": Vector2( 358, 83 ),
+"values": [  ]
 },
 "name": "priority_condition3",
 "type": 5
@@ -5458,7 +5604,7 @@ tree = {
 "fn": "task_pick_random_save_hide",
 "offset": Vector2( 2638.19, 841.082 ),
 "params": [  ],
-"size": Vector2( 391.001, 85.0001 ),
+"size": Vector2( 401, 84.9999 ),
 "values": [  ]
 },
 "name": "task2",
@@ -5469,7 +5615,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2638.19, 981.082 ),
 "params": [  ],
-"size": Vector2( 333.001, 85.0001 ),
+"size": Vector2( 339, 85.0001 ),
 "values": [  ]
 },
 "name": "task",
@@ -5480,7 +5626,7 @@ tree = {
 "fn": "task_run_curve",
 "offset": Vector2( 2648.19, 1121.08 ),
 "params": [  ],
-"size": Vector2( 333.001, 84.9995 ),
+"size": Vector2( 333, 84.9995 ),
 "values": [  ]
 },
 "name": "task3",
@@ -5489,15 +5635,17 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 2358.19, 931.082 ),
-"size": Vector2( 135, 136 )
+"size": Vector2( 138, 136 )
 },
 "name": "sequence",
 "type": 2
 } ],
 "data": {
-"fn": "task_succeed",
+"fn": "task_cannot_shoot_player",
 "offset": Vector2( 1952.04, 797.335 ),
-"size": Vector2( 289, 55.0001 )
+"params": [  ],
+"size": Vector2( 380, 83 ),
+"values": [  ]
 },
 "name": "priority_condition4",
 "type": 5
@@ -5505,7 +5653,7 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 1708.19, 671.082 ),
-"size": Vector2( 185, 109 )
+"size": Vector2( 189, 109 )
 },
 "name": "priority_selector2",
 "type": 4
@@ -5513,7 +5661,9 @@ tree = {
 "data": {
 "fn": "task_is_player",
 "offset": Vector2( 1318.19, 871.082 ),
-"size": Vector2( 314.74, 55 )
+"params": [  ],
+"size": Vector2( 314.74, 83 ),
+"values": [  ]
 },
 "name": "priority_condition",
 "type": 5
@@ -5536,7 +5686,7 @@ tree = {
 "fn": "task_compute_path",
 "offset": Vector2( 2024.15, 1857.15 ),
 "params": [  ],
-"size": Vector2( 333, 85 ),
+"size": Vector2( 339, 85 ),
 "values": [  ]
 },
 "name": "task6",
@@ -5556,7 +5706,7 @@ tree = {
 "data": {
 "count": 3,
 "offset": Vector2( 1754.15, 1787.15 ),
-"size": Vector2( 143, 136 )
+"size": Vector2( 146, 136 )
 },
 "name": "sequence3",
 "type": 2
@@ -5564,22 +5714,24 @@ tree = {
 "data": {
 "fn": "task_is_not_player",
 "offset": Vector2( 1298.63, 1659 ),
-"size": Vector2( 329, 55 )
+"params": [  ],
+"size": Vector2( 330, 83 ),
+"values": [  ]
 },
 "name": "priority_condition2",
 "type": 5
 } ],
 "data": {
 "count": 3,
-"offset": Vector2( 1020, 790 ),
-"size": Vector2( 179.414, 136 )
+"offset": Vector2( 1020, 740 ),
+"size": Vector2( 181, 136 )
 },
 "name": "priority_selector",
 "type": 4
 } ],
 "data": {
 "offset": Vector2( 775.196, 786.63 ),
-"size": Vector2( 107, 55.0001 )
+"size": Vector2( 108, 55.0001 )
 },
 "name": "mute",
 "type": 7
@@ -5587,7 +5739,7 @@ tree = {
 "data": {
 "count": 0.0,
 "offset": Vector2( 501.014, 713.968 ),
-"size": Vector2( 194, 55 )
+"size": Vector2( 196, 55 )
 },
 "name": "repeat",
 "type": 8
@@ -5595,14 +5747,14 @@ tree = {
 "data": {
 "count": 2,
 "offset": Vector2( 280, 20 ),
-"size": Vector2( 119, 109 )
+"size": Vector2( 124, 109 )
 },
 "name": "parallel",
 "type": 6
 } ],
 "data": {
 "offset": Vector2( 0, 0 ),
-"size": Vector2( 96, 82 )
+"size": Vector2( 96, 81.9995 )
 },
 "name": "root",
 "type": 0
