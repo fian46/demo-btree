@@ -1,14 +1,26 @@
 tool
 extends GraphNode
 
-const type = 1
+const Runtime = preload("res://addons/btree/Runtime/runtime.gd")
+
+var type = Runtime.TNodeTypes.TASK
 var load_function = ""
 var params = []
 var param_scene = preload("res://addons/btree/Editor/task/param.tscn")
 
+
 func _ready():
-	title = name
+	connect("close_request", self, "self_close")
+	connect("resize_request", self, "self_resize")
+	$Input/Add.connect("pressed", self, "add_pressed")
 	return
+
+func search_token():
+	var opt = $Main/Required/opt_function
+	var fname = ""
+	if  opt.selected > -1:
+		fname = opt.get_item_text(opt.get_selected())
+	return str(name, " | ", fname)
 
 func _enter_tree():
 	title = name
@@ -28,7 +40,24 @@ func _enter_tree():
 		$Params.add_child(input)
 	return
 
-func _on_GraphNode_resize_request(new_minsize):
+func as_task():
+	name = "task"
+	type = Runtime.TNodeTypes.TASK
+	return
+
+func as_priority_condition():
+	name = "priority_condition"
+	type = Runtime.TNodeTypes.PRIORITY_CONDITION
+	set_slot(0, true, 1, Color.yellow, true, 0, Color.blue)
+	return
+
+func as_while():
+	name = "while_node"
+	type = Runtime.TNodeTypes.WHILE
+	set_slot(0, true, 0, Color.blue, true, 0, Color.blue)
+	return
+
+func self_resize(new_minsize):
 	rect_size = new_minsize
 	return
 
@@ -62,7 +91,7 @@ func update():
 			opt.selected = old_sel
 	return
 
-func _on_GraphNode_close_request():
+func self_close():
 	get_parent().child_delete(self)
 	return
 
@@ -70,7 +99,10 @@ func set_data(data):
 	offset = data.offset
 	rect_size = data.size
 	load_function = data.fn
-	params = data.params
+	if  data.has("params"):
+		params = data.params
+	else:
+		params = []
 	return
 
 func get_data():
@@ -94,7 +126,7 @@ func get_data():
 	}
 	return ret_data
 
-func _on_Add_pressed():
+func add_pressed():
 	var input = param_scene.instance()
 	input.set_id($Params.get_child_count())
 	input.connect("remove_me", self, "remove_param")

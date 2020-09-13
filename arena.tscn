@@ -165,7 +165,6 @@ curve = SubResource( 2 )
 texture = ExtResource( 4 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 5 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]

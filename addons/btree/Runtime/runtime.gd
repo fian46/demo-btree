@@ -1,393 +1,429 @@
 extends Reference
 
-class Status:
-	var params = []
-	var status = RUNNING
+enum Status {
+	RUNNING = 0,
+	SUCCEED = 1,
+	FAILED = -1,
+}
+
+class TNode:
+	var name:String
+	var status: int = Status.RUNNING
+	var ticked := false
 	
-	const RUNNING = 0
-	const SUCCEED = 1
-	const FAILED = -1
+	func reset() -> int:
+		status = Status.RUNNING
+		ticked = false
+		return status
 	
-	func reset():
-		status = RUNNING
-		return
+	func succeed() -> int:
+		status = Status.SUCCEED
+		return status
 	
-	func succeed():
-		status = SUCCEED
-		return
-	
-	func failed():
-		status = FAILED
-		return
+	func failed() -> int:
+		status = Status.FAILED
+		return status
 	
 	func get_status():
 		return status
 	
-	func get_param(idx):
-		return params[idx]
-	
-	func get_param_count():
-		return params.size()
-
-class TNode:
-	var status = Status.new()
-	var children = Array()
-	
-	func get_child_count():
-		return children.size()
-	
-	func get_child(idx):
-		return children[idx]
-	
-	func validate_tree(target):
-		return
-	
-	func reset():
-		return
+	func setup(data: Dictionary, target):
+		pass
 	
 	func tick() -> int:
-		return 0
+		return Status.RUNNING
 
-class Race extends TNode:
-	func reset():
-		status.reset()
-		for i in range(get_child_count()):
-			get_child(i).reset()
-		return
+class CompositeTNode extends TNode:
+	var children := []
 	
+	func reset():
+		.reset()
+		for c in children:
+			if  c.ticked:
+				c.reset()
+		return
+
+class DecoratorTNode extends TNode:
+	var child: TNode
+	
+	func reset():
+		.reset()
+		if  child and child.ticked:
+			child.reset()
+		return
+
+class Race extends CompositeTNode:
 	func tick() -> int:
-		if  status.status != Status.RUNNING:
-			return status.status
-		if  get_child_count() == 0:
-			status.succeed()
-			return status.status
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  children.empty():
+			return succeed()
 		var fcount = 0
-		for i in range(get_child_count()):
-			var c = get_child(i)
-			var pr = c.status.status
+		for c in children:
+			var pr = c.status
 			var r = pr
 			
 			if  pr == Status.RUNNING:
-				r = get_child(i).tick()
+				r = c.tick()
 			
 			if  r == Status.SUCCEED:
-				status.succeed()
-				return status.status
+				return succeed()
 			elif r == Status.FAILED:
 				fcount += 1
-		if  fcount == get_child_count():
-			status.failed()
-			return status.status
-		return status.status
+		if  fcount == children.size():
+			return failed()
+		return status
 
-class Paralel extends TNode:
-	
-	func reset():
-		status.reset()
-		for i in range(get_child_count()):
-			get_child(i).reset()
-		return
-	
+class Paralel extends CompositeTNode:
 	func tick() -> int:
-		if  status.status != Status.RUNNING:
-			return status.status
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
 		
-		if  get_child_count() == 0:
-			status.succeed()
-			return status.status
+		if  children.empty():
+			return succeed()
 		
 		var scount = 0
-		for i in range(get_child_count()):
-			var c = get_child(i)
-			var pr = c.status.status
+		for c in children:
+			var pr = c.status
 			var r = pr
 			if  pr == Status.RUNNING:
 				r = c.tick()
 			if  r == Status.SUCCEED:
 				scount += 1
 			if  r == Status.FAILED:
-				status.failed()
-				return status.status
-		if  scount == get_child_count():
-			status.succeed()
-		return status.status
+				return failed()
+		if  scount == children.size():
+			succeed()
+		return status
 
-class PSelector extends TNode:
+class PSelector extends CompositeTNode:
 	
-	func reset():
-		status.reset()
-		for i in range(get_child_count()):
-			get_child(i).reset()
-		return
-	
-	func tick()->int:
-		if  status.status != Status.RUNNING:
-			return status.status
-		if  get_child_count() == 0:
-			status.failed()
-			return status.status
-		for i in range(0, get_child_count()):
-			var r = get_child(i).tick()
-			if  r == Status.FAILED:
-				continue
-			if  r == Status.SUCCEED:
-				var cr = get_child(i).get_child(0).tick()
-				if  cr == Status.FAILED:
-					continue
-				if  cr == Status.RUNNING:
-					return status.status
-				if  cr == Status.SUCCEED:
-					status.succeed()
-					return status.status
-		status.failed()
-		return status.status
-
-class PConditionStatus extends Status:
-	func _init():
-		reset()
-		return
-	
-	func reset():
-		status = Status.FAILED
-		return
-
-class PCondition extends TNode:
-	
-	var func_name = ""
-	var target = null
-	
-	func _init():
-		status = PConditionStatus.new()
-		return
-	
-	func reset():
-		status.reset()
-		for i in range(get_child_count()):
-			get_child(i).reset()
-		return
-	
-	func tick()->int:
-		if  get_child_count() == 0:
-			status.failed()
-			return status.status
-		target.call(func_name, status)
-		return status.status
-
-class Root extends TNode:
-	func reset():
-		get_child(0).reset()
-		return
-	
-	func tick()->int:
-		return get_child(0).tick()
-
-class Task extends TNode:
-	var target = null
-	var func_name = ""
-	
-	func reset():
-		status.reset()
-		return
-	
-	func tick()->int:
-		if  status.status != Status.RUNNING:
-			return status.status
-		target.call(func_name, status)
-		return status.status
-
-class Sequence extends TNode:
 	var current_child = 0
 	
 	func reset():
-		status.reset()
+		.reset()
 		current_child = 0
-		for i in range(get_child_count()):
-			get_child(i).reset()
-		return
-	
-	func tick()->int:
-		if  status.status != status.RUNNING:
-			return status.status
-		if  get_child_count() == 0:
-			status.succeed()
-			return status.status
-		for i in range(current_child, get_child_count()):
-			current_child = i
-			var c = get_child(i)
-			var r = c.tick()
-			if  r == Status.RUNNING:
-				return status.status
-			elif r == Status.FAILED:
-				status.failed()
-				return status.status
-		status.succeed()
-		return status.status
-
-class Selector extends TNode:
-	var current_child = 0
-	
-	func reset():
-		status.reset()
-		current_child = 0
-		for i in range(get_child_count()):
-			get_child(i).reset()
-		return
-	
-	func tick()->int:
-		if  status.status != Status.RUNNING:
-			return status.status
-		if  get_child_count() == 0:
-			status.succeed()
-			return status.status
-		for i in range(current_child, get_child_count()):
-			current_child = i
-			var c = get_child(i)
-			var r = c.tick()
-			if  r == Status.RUNNING:
-				return status.status
-			elif r == 1:
-				status.succeed()
-				return status.status
-		status.failed()
-		return status.status
-
-class Mute extends TNode:
-	
-	func reset():
-		status.reset()
-		for i in range(get_child_count()):
-			get_child(i).reset()
-		return
-	
-	func tick()->int:
-		if  status.status != Status.RUNNING:
-			return status.status
-		if  get_child_count() == 0:
-			status.succeed()
-			return status.status
-		var r = get_child(0).tick()
-		if  r != Status.RUNNING:
-			status.succeed()
-		return status.status
-
-class Repeat extends TNode:
-	
-	var tick_count = 0
-	var count = 0
-	
-	func reset():
-		tick_count = count
-		status.reset()
-		if  get_child_count() == 1:
-			get_child(0).reset()
-		return
-	
-	func tick()->int:
-		if  count > 0 and tick_count == 0:
-			status.succeed()
-			return status.status
-		if  status.status != Status.RUNNING:
-			return status.status
-		if  get_child_count() == 0:
-			status.succeed()
-			return status.status
-		var result = get_child(0).tick()
-		if  result == Status.SUCCEED:
-			get_child(0).reset()
-			if  count > 0:
-				tick_count -= 1
-				if  tick_count == 0:
-					status.succeed()
-			return status.status
-		
-		if  result == Status.FAILED:
-			status.failed()
-			return status.status
-		return status.status
-
-class WhileNode extends TNode:
-	var func_name = ""
-	var target = null
-	
-	func reset():
-		status.reset()
-		for i in range(get_child_count()):
-			get_child(i).reset()
 		return
 	
 	func tick() -> int:
-		if  status.status != Status.RUNNING:
-			return status.status
-		if  get_child_count() == 0:
-			status.failed()
-			return status.status
-		status.failed()
-		target.call(func_name, status)
-		if  status.status == Status.SUCCEED:
-			status.status = get_child(0).tick()
-		return status.status
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  children.empty():
+			return failed()
+		for i in range(current_child, children.size()):
+			current_child = i
+			var c = children[i]
+			var r = c.tick()
+			if  r == Status.FAILED:
+				continue
+			if  r == Status.SUCCEED:
+				var cr = c.child.tick()
+				if  cr == Status.FAILED:
+					continue
+				if  cr == Status.RUNNING:
+					return status
+				if  cr == Status.SUCCEED:
+					return succeed()
+		return failed()
 
-class WaitNode extends TNode:
+class PCondition extends DecoratorTNode:
+	var target: FuncRef
+	var params := []
 	
+	func _init():
+		status = Status.FAILED
+		return
+	
+	func reset():
+		.reset()
+		status = Status.FAILED
+		return
+	
+	func setup(data: Dictionary, target):
+		.setup(data, target)
+		self.target = funcref(target, data.fn)
+		params = data.get('values', [])
+		return
+	
+	func tick() -> int:
+		ticked = true
+		if  not child:
+			return failed()
+		target.call_func(self)
+		return status
+	
+	func get_param(idx):
+		return params[idx]
+		
+	func get_param_count():
+		return params.size()
+
+class Root extends DecoratorTNode:
+	func tick() -> int:
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  not child:
+			return failed()
+		return child.tick()
+
+class Task extends TNode:
+	var target: FuncRef
+	var params := []
+	
+	func setup(data: Dictionary, target):
+		.setup(data, target)
+		self.target = funcref(target, data.fn)
+		params = data.get('values', [])
+		return
+	
+	func tick() -> int:
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		target.call_func(self)
+		return status
+	
+	func get_param(idx):
+		return params[idx]
+		
+	func get_param_count():
+		return params.size()
+
+class Sequence extends CompositeTNode:
+	var current_child = 0
+	
+	func reset():
+		.reset()
+		current_child = 0
+		return
+	
+	func tick() -> int:
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  children.empty():
+			return succeed()
+		for i in range(current_child, children.size()):
+			current_child = i
+			var c = children[i]
+			var r = c.tick()
+			if  r == Status.RUNNING:
+				return status
+			elif r == Status.FAILED:
+				return failed()
+		return succeed()
+
+class RandomSequence extends Sequence:
+	func reset():
+		.reset()
+		children.shuffle()
+		return
+
+class Selector extends CompositeTNode:
+	var current_child = 0
+	
+	func reset():
+		.reset()
+		current_child = 0
+		return
+	
+	func tick() -> int:
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  children.empty():
+			return succeed()
+		for i in range(current_child, children.size()):
+			current_child = i
+			var c = children[i]
+			var r = c.tick()
+			if  r == Status.RUNNING:
+				return status
+			elif r == Status.SUCCEED:
+				return succeed()
+		return failed()
+
+class RandomSelector extends Selector:
+	func reset():
+		.reset()
+		children.shuffle()
+		return
+
+class Mute extends DecoratorTNode:
+	func tick() -> int:
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  not child or child.tick() != Status.RUNNING:
+			return succeed()
+		return status
+
+class Inverter extends DecoratorTNode:
+	func tick() -> int:
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  not child:
+			return succeed()
+		var r = child.tick()
+		if  r != Status.RUNNING:
+			if  r == Status.SUCCEED:
+				failed()
+			else:
+				succeed()
+		return status
+
+class Repeat extends DecoratorTNode:
 	var tick_count = 0
 	var count = 0
 	
-	func reset():
+	func setup(data: Dictionary, target):
+		.setup(data, target)
+		count = data.count
 		tick_count = count
-		status.reset()
 		return
 	
-	func tick()->int:
-		if  tick_count <= 0:
-			status.succeed()
-			return status.status
-		if  status.status != Status.RUNNING:
-			return status.status
-		tick_count -= 1
-		if  tick_count <= 0:
-			status.succeed()
-		return status.status
+	func reset():
+		.reset()
+		tick_count = count
+		return
+	
+	func tick() -> int:
+		ticked = true
+		if  count > 0 and tick_count == 0:
+			return succeed()
+		if  status != Status.RUNNING:
+			return status
+		if  not child:
+			return succeed()
+		if  child.status == Status.SUCCEED:
+			child.reset()
+		var result = child.tick()
+		if  result == Status.SUCCEED:
+			if  count > 0:
+				tick_count -= 1
+				if  tick_count == 0:
+					succeed()
+			return status
+		
+		if  result == Status.FAILED:
+			return failed()
+		return status
 
-static func create_runtime(data:Dictionary, target) -> TNode:
+class WhileNode extends DecoratorTNode:
+	var target: FuncRef
+	var params := []
+	
+	func setup(data: Dictionary, target):
+		.setup(data, target)
+		self.target = funcref(target, data.fn)
+		params = data.get('values', [])
+		return
+	
+	func tick() -> int:
+		ticked = true
+		if  status != Status.RUNNING:
+			return status
+		if  not child:
+			return failed()
+		failed()
+		target.call_func(self)
+		if  status == Status.SUCCEED:
+			status = child.tick()
+		return status
+	
+	func get_param(idx):
+		return params[idx]
+		
+	func get_param_count():
+		return params.size()
+
+class WaitNode extends TNode:
+	var tick_count = 0
+	var count = 0
+	
+	func setup(data: Dictionary, target):
+		.setup(data, target)
+		count = data.count
+		tick_count = count
+		return
+	
+	func reset():
+		.reset()
+		tick_count = count
+		return
+	
+	func tick() -> int:
+		ticked = true
+		if  tick_count <= 0:
+			return succeed()
+		if  status != Status.RUNNING:
+			return status
+		tick_count -= Engine.time_scale
+		if  tick_count <= 0:
+			succeed()
+		return status
+
+enum TNodeTypes {
+	ROOT,
+	TASK,
+	SEQUENCE,
+	SELECTOR,
+	PRIORITY_SELECTOR,
+	PRIORITY_CONDITION,
+	PARALEL,
+	MUTE,
+	REPEAT,
+	WHILE,
+	WAIT,
+	RACE,
+	RANDOM_SELECTOR,
+	RANDOM_SEQUENCE,
+	INVERTER,
+	MINIM = 99
+}
+
+const constructors = {}
+static func get_constructors() -> Dictionary:
+	if  not constructors.empty():
+		return constructors
+	constructors[TNodeTypes.ROOT] = Root
+	constructors[TNodeTypes.TASK] = Task
+	constructors[TNodeTypes.SEQUENCE] = Sequence
+	constructors[TNodeTypes.SELECTOR] = Selector
+	constructors[TNodeTypes.PRIORITY_SELECTOR] = PSelector
+	constructors[TNodeTypes.PRIORITY_CONDITION] = PCondition
+	constructors[TNodeTypes.PARALEL] = Paralel
+	constructors[TNodeTypes.MUTE] = Mute
+	constructors[TNodeTypes.REPEAT] = Repeat
+	constructors[TNodeTypes.WHILE] = WhileNode
+	constructors[TNodeTypes.WAIT] = WaitNode
+	constructors[TNodeTypes.RACE] = Race
+	constructors[TNodeTypes.RANDOM_SELECTOR] = RandomSelector
+	constructors[TNodeTypes.RANDOM_SEQUENCE] = RandomSequence
+	constructors[TNodeTypes.INVERTER] = Inverter
+	return constructors
+
+static func create_runtime(data: Dictionary, target) -> TNode:
 	if  data.empty():
 		return null
-	var current = null
-	if  data.type == 0:
-		current = Root.new()
-	elif  data.type == 1:
-		current = Task.new()
-		current.target = target
-		current.func_name = data.data.fn
-		current.status.params = data.data.values
-	elif  data.type == 2:
-		current = Sequence.new()
-	elif  data.type == 3:
-		current = Selector.new()
-	elif  data.type == 4:
-		current = PSelector.new()
-	elif  data.type == 5:
-		current = PCondition.new()
-		current.target = target
-		current.func_name = data.data.fn
-	elif data.type == 6:
-		current = Paralel.new()
-	elif data.type == 7:
-		current = Mute.new()
-	elif data.type == 8:
-		current = Repeat.new()
-		current.count = data.data.count
-		current.tick_count = current.count
-	elif data.type == 9:
-		current = WhileNode.new()
-		current.func_name = data.data.fn
-		current.target = target
-	elif data.type == 10:
-		current = WaitNode.new()
-		current.count = data.data.count
-		current.tick_count = current.count
-	elif data.type == 11:
-		current = Race.new()
-	if  current:
-		for child in data.child:
-			current.children.append(create_runtime(child, target))
+
+	if  data.type == TNodeTypes.MINIM:
+		return create_runtime(data.data.data.root, target)
+
+	var tnode_type = get_constructors().get(data.type)
+	var current: TNode = tnode_type.new()
+	current.name = data.name
+	current.setup(data.data, target)
+
+	for child in data.child:
+		var tnode_child = create_runtime(child, target)
+		if  current is CompositeTNode:
+			current.children.append(tnode_child)
+		elif current is DecoratorTNode:
+			current.child = tnode_child
 	return current

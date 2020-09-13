@@ -69,9 +69,18 @@ func task_pivot(task):
 		task.failed()
 	return
 
+var prob = 0
+
 func task_prob(task):
-	var r = randf()
-	if  r < 0.5:
+	prob = randf()
+	if  prob < 0.5:
+		task.succeed()
+	else:
+		task.failed()
+	return
+
+func task_n_prob(task):
+	if  prob >= 0.5:
 		task.succeed()
 	else:
 		task.failed()
@@ -99,6 +108,18 @@ func task_can_shoot_player(task):
 	else:
 		task.failed()
 	return
+
+func task_cannot_shoot_player(task):
+	if  not get_player() or get_player().is_queued_for_deletion():
+		task.succeed()
+		return
+	var result = get_world_2d().direct_space_state.intersect_ray(global_position, get_player().global_position)
+	if  result.collider == get_player():
+		task.failed()
+	else:
+		task.succeed()
+	return
+
 
 var bs = preload("res://bullet.tscn")
 
